@@ -50,6 +50,7 @@ client.on('message', message => {
     // Only try to join the sender's voice channel if they are in one themselves
     message.reply("nope")
     if (message.member.voiceChannel) {
+      message.reply("yes")
       message.member.voiceChannel.join()
         .then(connection => { // Connection is an instance of VoiceConnection
           message.reply('I have successfully connected to the channel!');
