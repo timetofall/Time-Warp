@@ -1,14 +1,14 @@
 const commando = require('discord.js-commando');
 
-class JoinChannelCommand extends commando.Command
+class Surprise extends commando.Command
 {
     constructor(client)
     {
         super(client,{
-            name: 'join',
+            name: 'sm',
             group: 'audio',
-            memberName: 'join',
-            description: 'Joins the voice channel of the commander'
+            memberName: 'sm',
+            description: 'Gives a surprise'
         });
     }
 
@@ -37,4 +37,4 @@ class JoinChannelCommand extends commando.Command
     }
 }
 
-module.exports = JoinChannelCommand;
+module.exports = Surprise;
