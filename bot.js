@@ -41,7 +41,10 @@ function processCommand(receivedMessage) {
 client.on('message', message => {
   // Voice only works in guilds, if the message does not come from a guild,
   // we ignore it
-  if (!message.guild) return;
+  if (!message.guild) {
+     message.reply("nope")
+     return;
+  }
 
   if (message.content === '/join') {
     // Only try to join the sender's voice channel if they are in one themselves
