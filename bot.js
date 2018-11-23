@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 
-const cmds = require("./commands.js");
+// const cmds = require("./commands.js");
 
 client.on('message', (receivedMessage) => {
    if (receivedMessage.author == client.user) { // Prevent bot from responding to its own messages
@@ -26,11 +26,12 @@ function processCommand(receivedMessage) {
         helpCommand(arguments, receivedMessage)
     }
     else if (primaryCommand == "popcorns") {
-        cmds.popcorns(receivedMessage)
+//         cmds.popcorns(receivedMessage)
+        popcorns(receivedMessage)
     }
     else {
-//         receivedMessage.channel.send("Ur fat")
-       receivedMessage.reply("Ur fat")
+        receivedMessage.channel.send("Ur fat")
+//         receivedMessage.reply("Ur fat")
     }
 }
 
@@ -42,9 +43,9 @@ function helpCommand(arguments, receivedMessage) {
     }
 }
 
-// function popcorns(receivedMessage) {
-//    receivedMessage.channel.send("<:popfeels:477323348125286405>")
-// }
+function popcorns(receivedMessage) {
+   receivedMessage.channel.send("<:popfeels:477323348125286405>")
+}
  
 
 // THIS  MUST  BE  THIS  WAY
