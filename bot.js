@@ -6,7 +6,6 @@ bot.registry.registerGroup('audio', 'Audio');
 bot.registry.registerDefaults();
 bot.registry.registerCommandsIn(__dirname + '/commands');
 
-
 bot.on('ready', function() {
     console.log("Ready");
 })
