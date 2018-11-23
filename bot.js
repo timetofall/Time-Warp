@@ -22,6 +22,15 @@ client.on('message', message => {
 
 });
 
+client.on('message', message => {
+
+    if (message.content === 'popcorns') {
+
+       message.reply(':popfeels:');
+
+       }
+
+});
  
 
 // THIS  MUST  BE  THIS  WAY
