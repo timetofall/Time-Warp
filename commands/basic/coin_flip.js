@@ -17,11 +17,13 @@ class CoinFlipCommand extends commando.Command
         var chance = Math.floor(Math.random() * 2);
         if (chance == 0)
         {
-            message.reply("Your coin landed on Heads!");
+            //message.reply("Your coin landed on Heads!");
+            message.channel.send("Your coin landed on Heads!");
         }
         else
         {
-            message.reply("Your coin landed on Tails!");
+            //message.reply("Your coin landed on Tails!");
+            message.channel.send("Your coin landed on Tails!");
         }
     }
 }
