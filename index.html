@@ -8,10 +8,29 @@
   <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
 </head>
 <body>
+
+
  <div id="app">
    <v-app light>
     <v-content>
 
+
+            <template>
+                    <v-parallax
+                      dark
+                      src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
+                    >
+                      <v-layout
+                        align-center
+                        column
+                        justify-center
+                      >
+                        <h1 class="display-2 font-weight-thin mb-3">Vuetify.js</h1>
+                        <h4 class="subheading">Build your application today!</h4>
+                      </v-layout>
+                    </v-parallax>
+                  </template>
+        <!--
         <section>
         <v-parallax src="assets/firemage.jpg" height="1200">
           <v-layout
@@ -34,22 +53,15 @@
           </v-layout>
         </v-parallax>
       </section>
+        -->
 
-      <!--
-      <v-footer class="blue darken-2">
-        <v-layout row wrap align-center>
-          <v-flex xs12>
-            <div class="white--text ml-3">
-              Time Warp Discord Bot
-            </div>
-          </v-flex>
-        </v-layout>
-      </v-footer>
-      -->
-      
     </v-content>
   </v-app>
  </div>
+
+
+
+
  <script src="https://unpkg.com/vue/dist/vue.js"></script>
  <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
  <script>
