@@ -16,6 +16,6 @@ body, html {
     background-size: cover;
 }
 
-div.a {
+#title {
     text-align: center;
 }
