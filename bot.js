@@ -23,30 +23,16 @@ function processCommand(receivedMessage) {
     console.log("Arguments: " + arguments) // There may not be any arguments
 
     if (primaryCommand == "help") {
-        helpCommand(arguments, receivedMessage)
+        cmds.helpCommand(arguments, receivedMessage)
     }
     else if (primaryCommand == "popcorns") {
         cmds.popcorns(receivedMessage)
-//         popcorns(receivedMessage)
     }
     else {
-//         receivedMessage.channel.send("Ur fat")
         receivedMessage.reply("Ur fat")
     }
 }
 
-function helpCommand(arguments, receivedMessage) {
-    if (arguments.length > 0) {
-        receivedMessage.channel.send("Get gud scrub")
-    } else {
-        receivedMessage.channel.send("Git gud scrub")
-    }
-}
-
-function popcorns(receivedMessage) {
-   receivedMessage.channel.send("<:popfeels:477323348125286405>")
-}
- 
 
 // THIS  MUST  BE  THIS  WAY
 
