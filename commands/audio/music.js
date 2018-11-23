@@ -46,9 +46,7 @@ class Music extends commando.Command
                     .then(connection =>{
                         var server = servers[message.guild.id];
                         message.reply("Successfully joined");
-                        const fs = require('fs');
-                        const stream = fs.createReadStream('audiofile.mp3');
-                        connection.playStream(stream);
+                        connection.playArbitraryInput('https://cdn.discordapp.com/attachments/230818745352847360/515637943218733057/surprise-motherfucker.mp3');
                     })
                     .catch(console.log);
             }
