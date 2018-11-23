@@ -33,7 +33,7 @@ function processCommand(receivedMessage) {
         audio.surprise(receivedMessage)
     }
     else {
-        receivedMessage.reply("Ur fat")
+        receivedMessage.reply("Ur phat")
     }
 }
 
