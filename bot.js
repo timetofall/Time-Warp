@@ -13,7 +13,7 @@ bot.on('ready', function() {
 })
 
 bot.on('message', message =>{
-    if (message === "!sm") {
+    if (message === "sm") {
         var VC = message.member.voiceChannel;
         if (!VC)
             return message.reply("MESSAGE IF NOT IN A VOICE CHANNEL")
