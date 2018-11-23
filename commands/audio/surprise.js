@@ -21,6 +21,8 @@ class Surprise extends commando.Command
                 message.member.voiceChannel.join()
                     .then(connection =>{
                         message.reply("Successfully joined!");
+                        const dispatcher = connection.playFile('../../AudioFiles/surprise-motherfucker.mp3');
+                        dispatcher.setVolume(0.5); // Set the volume to 50%
                         message.guild.voiceConnection.disconnect();
                         message.reply("Successfully left!");
                     })
