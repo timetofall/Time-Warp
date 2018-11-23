@@ -21,7 +21,8 @@
             justify-center
             class="white--text"
           >
-            <img src="assets/time_warp.png" alt="Vuetify.js" height="150">
+            <img src="assets/time_warp.png" alt="Vuetify.js" height="150" value="PLAY" onclick="play()">
+            <audio id="audio" src="surprise-motherfucker.mp3" ></audio>
             <h1 class="white--text mb-2 display-1 text-xs-center">Time Warp</h1>
             <div class="subheading mb-3 text-xs-center">Discord Bot</div>
             <v-btn
@@ -51,5 +52,12 @@
     }
   })
  </script>
+
+<script>
+    function play(){
+         var audio = document.getElementById("audio");
+         audio.play();
+                   }
+     </script>
 </body>
 </html>
