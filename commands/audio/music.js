@@ -1,15 +1,23 @@
 const commando = require('discord.js-commando');
-// const YTDL = require('ytdl-core');
+const YTDL = require('ytdl-core');
 
 function Play(connection, message)
 {
     var server = servers[message.guild.id];
     // message.reply(server.queue[0])
     // server.dispatcher = connection.playFile(server.queue[0])
-    // server.queue.shift();
-    // server.dispatcher.on("end", function(){
-    //     connection.disconnect()
-    // })
+    server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"}));
+    server.queue.shift();
+    server.dispatcher.on("end", function(){
+        if(server.queue[0])
+        {
+            Play(connection, message);
+        }
+        else
+        {
+            connection.disconnect();
+        }
+    })
 }
 
 class Music extends commando.Command
@@ -39,6 +47,7 @@ class Music extends commando.Command
                         var server = servers[message.guild.id];
                         message.reply("Successfully join");
                         // server.queue.push('./surprise-motherfucker.mp3');
+                        server.queue.push(args)
                         Play(connection, message);
                         // const dispatcher = connection.playFile('surprise-motherfucker.mp3');
                     })
