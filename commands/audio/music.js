@@ -4,8 +4,8 @@ const commando = require('discord.js-commando');
 function Play(connection, message)
 {
     var server = servers[message.guild.id];
-    server.dispatcher = connection.playFile(server.queue[0])
     message.reply(server.queue[0])
+    server.dispatcher = connection.playFile(server.queue[0])
     server.queue.shift();
     server.dispatcher.on("end", function(){
         connection.disconnect()
@@ -38,7 +38,7 @@ class Music extends commando.Command
                     .then(connection =>{
                         var server = servers[message.guild.id];
                         message.reply("Successfully join");
-                        server.queue.push('../../AudioFiles/surprise-motherfucker.mp3');
+                        server.queue.push('./surprise-motherfucker.mp3');
                         Play(connection, message);
                     })
             }
