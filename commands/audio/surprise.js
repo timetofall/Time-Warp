@@ -5,9 +5,9 @@ class Surprise extends commando.Command
     constructor(client)
     {
         super(client,{
-            name: 'join',
+            name: 'sm',
             group: 'audio',
-            memberName: 'join',
+            memberName: 'sm',
             description: 'Joins the voice channel of the commander'
         });
     }
