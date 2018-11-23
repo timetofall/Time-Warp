@@ -6,17 +6,17 @@ bot.registry.registerGroup('audio', 'Audio');
 bot.registry.registerDefaults();
 bot.registry.registerCommandsIn(__dirname + '/commands');
 
+import { processMessage } from './commands/basic/replies';
+
 global.servers = {};
 
 bot.on('ready', function() {
     console.log("Ready");
-})
+});
 
-bot.on('message', (receivedMessage) => {
-    if(receivedMessage == "popcorns")
-    {
-        receivedMessage.channel.send("James is TEST, <:popfeels:477323348125286405>")
-    }
-})
+bot.on('message', (message) => {
+    let reply = processMessage(message);
+    message.channel.send(reply)
+});
 
 bot.login(process.env.BOT_TOKEN); // grabs the token from Heroku Config Vars
