@@ -1,24 +1,24 @@
 const commando = require('discord.js-commando');
 // const YTDL = require('ytdl-core');
 
-function Play(connection, message)
-{
-    var server = servers[message.guild.id];
-    // message.reply(server.queue[0])
-    // server.dispatcher = connection.playFile(server.queue[0])
-    server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"}));
-    server.queue.shift();
-    server.dispatcher.on("end", function(){
-        if(server.queue[0])
-        {
-            Play(connection, message);
-        }
-        else
-        {
-            connection.disconnect();
-        }
-    })
-}
+// function Play(connection, message)
+// {
+//     var server = servers[message.guild.id];
+//     // message.reply(server.queue[0])
+//     // server.dispatcher = connection.playFile(server.queue[0])
+//     server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"}));
+//     server.queue.shift();
+//     server.dispatcher.on("end", function(){
+//         if(server.queue[0])
+//         {
+//             Play(connection, message);
+//         }
+//         else
+//         {
+//             connection.disconnect();
+//         }
+//     })
+// }
 
 class Music extends commando.Command
 {
@@ -46,11 +46,9 @@ class Music extends commando.Command
                     .then(connection =>{
                         var server = servers[message.guild.id];
                         message.reply("Successfully join");
-                        // server.queue.push('./surprise-motherfucker.mp3');
-                        server.queue.push(args)
-                        Play(connection, message);
-                        // const dispatcher = connection.playFile('surprise-motherfucker.mp3');
+                        const dispatcher = connection.playFile('./audiofile.mp3');
                     })
+                    .catch(console.log);
             }
         }
         else
