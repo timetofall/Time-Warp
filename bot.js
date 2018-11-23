@@ -23,7 +23,7 @@ function processCommand(receivedMessage) {
     console.log("Arguments: " + arguments) // There may not be any arguments
 
     if (primaryCommand == "help") {
-        cmds.helpCommand(arguments, receivedMessage)
+        cmds.helpCommand(receivedMessage)
     }
     else if (primaryCommand == "popcorns") {
         cmds.popcorns(receivedMessage)
