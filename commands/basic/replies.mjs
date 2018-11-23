@@ -1,12 +1,12 @@
 export function processMessage(message) {
   switch(message) {
     case 'popcorns':
-        break;
+        return popcorns();
     default:
         return "Ur fat"
     }
 }
 
-function popcorns(message) {
+function popcorns() {
     return "James is TEST, <:popfeels:477323348125286405>"
 }
