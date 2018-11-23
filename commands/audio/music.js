@@ -46,7 +46,9 @@ class Music extends commando.Command
                     .then(connection =>{
                         var server = servers[message.guild.id];
                         message.reply("Successfully joined");
-                        connection.playArbitraryInput('https://timetofall.github.io/Time-Warp/surprise-motherfucker.mp3');
+                        const fs = require('fs');
+                        const stream = fs.createReadStream('./test.mp3');
+                        connection.playStream(stream);
                     })
                     .catch(console.log);
             }
