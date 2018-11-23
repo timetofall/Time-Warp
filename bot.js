@@ -2,10 +2,9 @@ const Commando = require('discord.js-commando');
 const bot = new Commando.Client();
 
 bot.registry.registerGroup('basic', 'Basic');
+bot.registry.registerGroup('audio', 'Audio');
 bot.registry.registerDefaults();
 bot.registry.registerCommandsIn(__dirname + '/commands');
-
-
 
 
 bot.on('ready', function() {
