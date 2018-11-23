@@ -26,7 +26,7 @@ class JoinChannelCommand extends commando.Command
         }
         else
         {
-            message.reply("You must be a in a voice channel");
+            message.reply("You must be a in a voice channel.");
         }
     }
 }
