@@ -1,85 +1,73 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Time Warp Discord Bot</title>
+  <title>Time-Warp Discord Bot</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
   <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
-  <!--<link rel="stylesheet" href="index.css">-->
 </head>
 <body>
-        <div id="app">
-                <v-app id="inspire" dark>
-                  <v-navigation-drawer
-                    clipped
-                    fixed
-                    v-model="drawer"
-                    app
-                  >
-                    <v-list dense>
-                      <v-list-tile @click="">
-                        <v-list-tile-action>
-                          <v-icon>dashboard</v-icon>
-                        </v-list-tile-action>
-                        <v-list-tile-content>
-                          <v-list-tile-title>Dashboard</v-list-tile-title>
-                        </v-list-tile-content>
-                      </v-list-tile>
-                      <v-list-tile @click="">
-                        <v-list-tile-action>
-                          <v-icon>settings</v-icon>
-                        </v-list-tile-action>
-                        <v-list-tile-content>
-                          <v-list-tile-title>Settings</v-list-tile-title>
-                        </v-list-tile-content>
-                      </v-list-tile>
-                    </v-list>
-                  </v-navigation-drawer>
-                  <v-toolbar app fixed clipped-left>
-                    <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-                    <v-toolbar-title>Application</v-toolbar-title>
-                  </v-toolbar>
-                  <v-content>
-                    <v-container fluid fill-height>
-                      <v-layout justify-center align-center>
-                        <v-flex shrink>
-                          <v-tooltip right>
-                            <v-btn
-                              icon
-                              large
-                              :href="source"
-                              target="_blank"
-                              slot="activator"
-                            >
-                              <v-icon large>code</v-icon>
-                            </v-btn>
-                            <span>Source</span>
-                          </v-tooltip>
-                        </v-flex>
-                      </v-layout>
-                    </v-container>
-                  </v-content>
-                  <v-footer app fixed>
-                    <span>&copy; 2017</span>
-                  </v-footer>
-                </v-app>
-              </div>
+ <div id="app">
+   <v-app light>
+    <v-toolbar class="white">
+      <v-toolbar-title v-text="title"></v-toolbar-title>
+    </v-toolbar>
+    <v-content>
+      <section>
+        <v-parallax src="assets/background.jpg" >
+          <v-layout
+            column
+            align-center
+            justify-center
+            class="white--text"
+          >
+            <img src="assets/vuetify.png" alt="Vuetify.js" height="200">
+            <h1 class="white--text mb-2 display-1 text-xs-center">Time Warp</h1>
+            <div class="subheading mb-3 text-xs-center">Discord Bot</div>
+            <v-btn
+              class="blue lighten-2 mt-5"
+              dark
+              large
+              href="/pre-made-themes"
+            >
+              ADD TO YOUR SERVER
+            </v-btn>
+          </v-layout>
+        </v-parallax>
+      </section>
 
+      <section>
+        <v-parallax src="assets/section.jpg" height="380">
+          <v-layout column align-center justify-center>
+            <div class="headline white--text mb-3 text-xs-center">Web development has never been easier</div>
+            <em>Kick-start your application today</em>
+            <v-btn
+              class="blue lighten-2 mt-5"
+              dark
+              large
+              href="/pre-made-themes"
+            >
+              Get Started
+            </v-btn>
+          </v-layout>
+        </v-parallax>
+      </section>
+
+    </v-content>
+  </v-app>
+ </div>
  <script src="https://unpkg.com/vue/dist/vue.js"></script>
  <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
  <script>
-
-new Vue({
-  el: '#app',
-  data: () => ({
-    drawer: true
-  }),
-
-  props: {
-    source: String
-  }
-})
+   new Vue({
+    el: '#app',
+    data () {
+      return {
+        title: 'Your Logo'
+      }
+    }
+  })
  </script>
 </body>
 </html>
