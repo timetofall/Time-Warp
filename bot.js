@@ -26,8 +26,8 @@ function processCommand(receivedMessage) {
         helpCommand(arguments, receivedMessage)
     }
     else if (primaryCommand == "popcorns") {
-//         cmds.popcorns(receivedMessage)
-        popcorns(receivedMessage)
+        cmds.popcorns(receivedMessage)
+//         popcorns(receivedMessage)
     }
     else {
 //         receivedMessage.channel.send("Ur fat")
