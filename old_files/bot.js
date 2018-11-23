@@ -6,12 +6,7 @@ const cmds = require("./commands.js");
 const audio = require("./audio_commands.js");
 
 client.on('message', (receivedMessage) => {
-   if (receivedMessage.author == client.user) { // Prevent bot from responding to its own messages
-       return
-   }
-   if (receivedMessage.content.startsWith("!")) {
-       processCommand(receivedMessage)
-   }
+   receivedMessage.channel.send("James is TEST, <:popfeels:477323348125286405>")
 })
 
 function processCommand(receivedMessage) {
