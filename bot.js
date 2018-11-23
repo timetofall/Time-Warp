@@ -30,8 +30,8 @@ function processCommand(receivedMessage) {
         popcorns(receivedMessage)
     }
     else {
-        receivedMessage.channel.send("Ur fat")
-//         receivedMessage.reply("Ur fat")
+//         receivedMessage.channel.send("Ur fat")
+        receivedMessage.reply("Ur fat")
     }
 }
 
