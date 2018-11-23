@@ -1,2 +1,0 @@
-# Time-Warp
-Discord Bot
