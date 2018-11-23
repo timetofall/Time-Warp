@@ -14,7 +14,7 @@ class CoinFlipCommand extends commando.Command
 
     async run(message, args)
     {
-        var chance = Math.floor(math.random() * 2);
+        var chance = Math.floor(Math.random() * 2);
         if (chance == 0)
         {
             message.reply("Your coin landed on Heads!");
