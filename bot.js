@@ -16,7 +16,9 @@ bot.on('ready', function() {
 
 bot.on('message', (message) => {
     let reply = processMessage(message);
-    message.channel.send(reply)
+    if(reply){
+        message.channel.send(reply)
+    }
 });
 
 bot.login(process.env.BOT_TOKEN); // grabs the token from Heroku Config Vars

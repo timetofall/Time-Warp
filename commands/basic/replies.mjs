@@ -3,7 +3,7 @@ export function processMessage(message) {
     case 'popcorns':
         return popcorns();
     default:
-        return "Ur fat"
+        return false
     }
 }
 
