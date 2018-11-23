@@ -29,7 +29,8 @@ function processCommand(receivedMessage) {
         cmds.popcorns(receivedMessage)
     }
     else {
-        receivedMessage.channel.send("Ur fat")
+//         receivedMessage.channel.send("Ur fat")
+       receivedMessage.reply("Ur fat")
     }
 }
 
