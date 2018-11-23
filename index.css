@@ -1,3 +1,4 @@
 body{
-    background: url('assets/firemage.jpg')
+    background: url('assets/firemage.jpg');
+    background-repeat: no-repeat;
 }
