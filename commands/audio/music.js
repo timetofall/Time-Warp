@@ -47,6 +47,11 @@ class Music extends commando.Command
                         var server = servers[message.guild.id];
                         message.reply("Successfully join");
                         const dispatcher = connection.playFile('audiofile.mp3');
+                        dispatcher.on('end', () => {
+                            // The song has finished
+                            connection.disconnect()
+                        });
+
                     })
                     .catch(console.log);
             }
