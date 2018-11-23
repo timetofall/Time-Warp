@@ -1,1 +1,4 @@
-
+module.exports = {
+        surprise: (message) => {
+        },
+};
