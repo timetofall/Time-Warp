@@ -13,7 +13,7 @@
     <v-content>
 
         <section>
-        <v-parallax src="assets/firemage.jpg" height="800">
+        <v-parallax src="assets/firemage.jpg" height="1200">
           <v-layout
             column
             align-center
@@ -47,9 +47,17 @@
     </v-content>
   </v-app>
  </div>
-
  <script src="https://unpkg.com/vue/dist/vue.js"></script>
  <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
-
+ <script>
+   new Vue({
+    el: '#app',
+    data () {
+      return {
+        title: 'Your Logo'
+      }
+    }
+  })
+ </script>
 </body>
 </html>
