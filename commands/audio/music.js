@@ -45,9 +45,9 @@ class Music extends commando.Command
                 message.member.voiceChannel.join()
                     .then(connection =>{
                         var server = servers[message.guild.id];
-                        message.reply("Successfully join");
+                        message.reply("Successfully joined");
                         const fs = require('fs');
-                        const stream = fs.createReadStream('./audiofile.mp3');
+                        const stream = fs.createReadStream('audiofile.mp3');
                         connection.playStream(stream);
                     })
                     .catch(console.log);
