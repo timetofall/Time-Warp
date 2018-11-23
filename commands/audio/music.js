@@ -40,7 +40,7 @@ class Music extends commando.Command
                         // message.reply("Successfully join");
                         // server.queue.push('./surprise-motherfucker.mp3');
                         // Play(connection, message);
-                        const dispatcher = connection.playFile('./surprise-motherfucker.mp3');
+                        const dispatcher = connection.playFile('surprise-motherfucker.mp3');
                     })
             }
         }
