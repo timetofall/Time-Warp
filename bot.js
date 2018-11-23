@@ -3,6 +3,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 const cmds = require("./commands.js");
+const audio = require("./audio_commands.js");
 
 client.on('message', (receivedMessage) => {
    if (receivedMessage.author == client.user) { // Prevent bot from responding to its own messages
@@ -27,6 +28,9 @@ function processCommand(receivedMessage) {
     }
     else if (primaryCommand == "popcorns") {
         cmds.popcorns(receivedMessage)
+    }
+    else if (primaryCommand == "surprise") {
+        audio.surprise(receivedMessage)
     }
     else {
         receivedMessage.reply("Ur fat")
