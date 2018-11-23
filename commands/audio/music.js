@@ -3,13 +3,13 @@ const commando = require('discord.js-commando');
 
 function Play(connection, message)
 {
-    var server = servers[message.guild.id];
-    message.reply(server.queue[0])
-    server.dispatcher = connection.playFile(server.queue[0])
-    server.queue.shift();
-    server.dispatcher.on("end", function(){
-        connection.disconnect()
-    })
+    // var server = servers[message.guild.id];
+    // message.reply(server.queue[0])
+    // server.dispatcher = connection.playFile(server.queue[0])
+    // server.queue.shift();
+    // server.dispatcher.on("end", function(){
+    //     connection.disconnect()
+    // })
 }
 
 class Music extends commando.Command
@@ -36,10 +36,11 @@ class Music extends commando.Command
                 }
                 message.member.voiceChannel.join()
                     .then(connection =>{
-                        var server = servers[message.guild.id];
-                        message.reply("Successfully join");
-                        server.queue.push('./surprise-motherfucker.mp3');
-                        Play(connection, message);
+                        // var server = servers[message.guild.id];
+                        // message.reply("Successfully join");
+                        // server.queue.push('./surprise-motherfucker.mp3');
+                        // Play(connection, message);
+                        const dispatcher = connection.playFile('./surprise-motherfucker.mp3');
                     })
             }
         }
