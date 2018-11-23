@@ -1,7 +1,7 @@
 module.exports = {
         surprise: (message) => {
                 if (message.member.voiceChannel) {
-                        message.reply("hi")
+                        message.reply("bye")
                         message.member.voiceChannel.join()
                 }
                 else {
