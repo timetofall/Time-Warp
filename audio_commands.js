@@ -1,5 +1,10 @@
 module.exports = {
         surprise: (message) => {
-                message.reply("hi")
+                if (message.member.voiceChannel) {
+                        message.reply("hi")
+                }
+                else {
+                        message.reply("ur stoopid")
+                }
         },
 };
