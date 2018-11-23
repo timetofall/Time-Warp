@@ -1,63 +1,69 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Time Warp Discord Bot</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
-  <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
-</head>
+<html lang="en">
 
-<body>
- <div id="app">
-   <v-app light>
-    <v-content>
-      <section>
-        <v-parallax src="assets/background.jpg" height="900">
-          <v-layout
-            column
-            align-center
-            justify-center
-            class="white--text"
-          >
-            <img src="assets/time_warp.png" alt="Vuetify.js" height="150">
-            <h1 class="white--text mb-2 display-1 text-xs-center">Time Warp</h1>
-            <div class="subheading mb-3 text-xs-center">Discord Bot</div>
-            <v-btn
-              class="blue lighten-2 mt-5"
-              dark
-              large
-              href="https://discordapp.com/oauth2/authorize?client_id=515322195887652875&scope=bot"
-            >
-              ADD TO YOUR SERVER
-            </v-btn>
-          </v-layout>
-        </v-parallax>
-      </section>
+  <head>
 
-      <v-footer class="blue darken-2">
-        <v-layout row wrap align-center>
-          <v-flex xs12>
-            <div class="white--text ml-3">
-              Time Warp :)
-            </div>
-          </v-flex>
-        </v-layout>
-      </v-footer>
-    </v-content>
-  </v-app>
- </div>
- <script src="https://unpkg.com/vue/dist/vue.js"></script>
- <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
- <script>
-   new Vue({
-    el: '#app',
-    data () {
-      return {
-        title: 'Your Logo'
-      }
-    }
-  })
- </script>
-</body>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Time Warp Discord Bot</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/the-big-picture.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">
+      <div class="container">
+        <a class="navbar-brand" href="#">Start Bootstrap</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <h1 class="mt-5">The Big Picture</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt voluptates rerum eveniet sapiente repellat esse, doloremque quod recusandae deleniti nostrum assumenda vel beatae sed aut modi nesciunt porro quisquam voluptatem.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
 </html>
