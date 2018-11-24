@@ -1,7 +1,7 @@
 export function processMessage(message) {
   switch(message) {
-    case 'popcorns':
-        return popcorns();
+      case "popcorns":
+        return "hi";
     default:
         return false
     }
