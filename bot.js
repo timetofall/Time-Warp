@@ -8,7 +8,7 @@ bot.registry.registerCommandsIn(__dirname + '/commands');
 
 bot.on('ready', function() {
     console.log("Time-Warp Ready");
-    //bot.user.setActivity('Diablo Immortal', { type: 'PLAYING' });
+    bot.user.setActivity('Diablo Immortal', { type: 'PLAYING' });
 });
 
 bot.on('message', (message) => {
