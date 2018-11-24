@@ -11,7 +11,7 @@ bot.on('ready', function() {
 });
 
 bot.on('message', (message) => {
-    const cmds = require("./replies.js");
+    const cmds = require("./commands/basic/replies.js");
     if(message == "popcorns"){
         message.channel.send("James is TEST, <:popfeels:477323348125286405>")
     }

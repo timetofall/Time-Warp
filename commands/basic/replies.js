@@ -9,17 +9,10 @@
 
 module.exports = {
     process: (message) => {
-            if(message == "popcorns")
-            {
-                return popcorns()
-            }
-            else
-            {
-                return "hi"
-            }
+            message.channel.send("James is TEST, <:popfeels:477323348125286405>")
     },
 };
 
-function popcorns() {
-    return "James is TEST, <:popfeels:477323348125286405>"
-}
+// function popcorns() {
+//     return "James is TEST, <:popfeels:477323348125286405>"
+// }
