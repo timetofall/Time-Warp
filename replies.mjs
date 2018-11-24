@@ -1,6 +1,8 @@
-export function hello() {
+function hello() {
   return "Hello";
 }
+
+export default hello;
 
 // export function processMessage(message) {
 //   return "hello"
@@ -9,3 +11,4 @@ export function hello() {
 // function popcorns() {
 //     return "James is TEST, <:popfeels:477323348125286405>"
 // }
+
