@@ -8,7 +8,8 @@ bot.registry.registerCommandsIn(__dirname + '/commands');
 
 bot.on('ready', function() {
     console.log("Ready");
-    bot.user.setGame('Diablo Immortal')
+    // bot.user.setGame('Diablo Immortal')
+    bot.user.setActivity('Diablo Immortal', { type: 'PLAYING' });
 });
 
 bot.on('message', (message) => {
