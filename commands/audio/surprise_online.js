@@ -17,7 +17,7 @@ function Play(connection, message)
     })
 }
 
-class Surprise extends commando.Command
+class Surprise_online extends commando.Command
 {
     constructor(client)
     {
@@ -55,4 +55,4 @@ class Surprise extends commando.Command
     }
 }
 
-module.exports = Surprise;
+module.exports = Surprise_online;
