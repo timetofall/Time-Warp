@@ -10,7 +10,10 @@ bot.on('ready', function() {
     console.log("Ready");
     // bot.user.setGame('Diablo Immortal')
     // bot.user.setActivity('Diablo Immortal', { type: 'PLAYING' });
-    client.user.setActivity("Diablo Immortal", { type: "PLAYING"})
+});
+
+bot.on("ready", () => {
+    bot.user.setActivity("Diablo Immortal", { type: "PLAYING"})
 });
 
 bot.on('message', (message) => {
