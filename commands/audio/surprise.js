@@ -1,11 +1,11 @@
 const commando = require('discord.js-commando');
-const YTDL = require('ytdl-core');
 
 function Play(connection, message)
 {
-    var server = servers[message.guild.id];
-    server.dispatcher = connection.playArbitraryInput('https://timetofall.github.io/Time-Warp/surprise-motherfucker.mp3');
+    let server = play_queue[message.guild.id];
+    server.dispatcher = connection.playArbitraryInput(q[0]);
     server.queue.shift();
+    sleep(2500);
     server.dispatcher.on("end", function(){
         if(server.queue[0])
         {
@@ -18,7 +18,7 @@ function Play(connection, message)
     })
 }
 
-class Audio extends commando.Command
+class Surprise extends commando.Command
 {
     constructor(client)
     {
@@ -36,15 +36,15 @@ class Audio extends commando.Command
         {
             if(!message.guild.voiceConnection)
             {
-                if(!servers[message.guild.id])
+                if(!play_queue[message.guild.id])
                 {
-                    servers[message.guild.id] = {queue: []}
+                    play_queue[message.guild.id] = {queue: []}
                 }
                 message.member.voiceChannel.join()
                     .then(connection =>{
-                        var server = servers[message.guild.id];
+                        let server = play_queue[message.guild.id];
                         message.reply("Successfully Joined!");
-                        server.queue.push(args);
+                        server.queue.push('https://timetofall.github.io/Time-Warp/surprise-motherfucker.mp3');
                         Play(connection, message);
                     })
                     .catch(console.log);
@@ -57,4 +57,4 @@ class Audio extends commando.Command
     }
 }
 
-module.exports = Audio;
+module.exports = Surprise;

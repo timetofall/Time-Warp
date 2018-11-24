@@ -6,7 +6,8 @@ bot.registry.registerGroup('audio', 'Audio');
 bot.registry.registerDefaults();
 bot.registry.registerCommandsIn(__dirname + '/commands');
 
-global.servers = {}
+global.servers = {};
+global.play_queue = {};
 
 bot.on('ready', function() {
     console.log("Time-Warp Ready");
@@ -24,3 +25,12 @@ bot.on('message', (message) => {
 });
 
 bot.login(process.env.BOT_TOKEN); // grabs the token from Heroku Config Vars
+
+window.sleep = function(milliseconds){
+  let start = new Date().getTime();
+  for (let i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+};
