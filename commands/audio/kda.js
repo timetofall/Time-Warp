@@ -3,7 +3,7 @@ const commando = require('discord.js-commando');
 function Play(connection, message)
 {
     let server = play_queue[message.guild.id];
-    server.dispatcher = connection.playFile('./audio/surprise-motherfucker.mp3');
+    server.dispatcher = connection.playFile('./kda.mp3');
     server.queue.shift();
     server.dispatcher.on("end", function(){
         if(server.queue[0])
@@ -43,7 +43,7 @@ class Surprise_Local extends commando.Command
                     .then(connection =>{
                         let server = play_queue[message.guild.id];
                         message.reply("Successfully Joined!");
-                        server.queue.push('./audio/surprise-motherfucker.mp3');
+                        server.queue.push('./kda.mp3');
                         Play(connection, message);
                     })
                     .catch(console.log);
