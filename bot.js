@@ -6,15 +6,12 @@ bot.registry.registerGroup('audio', 'Audio');
 bot.registry.registerDefaults();
 bot.registry.registerCommandsIn(__dirname + '/commands');
 
-// import hello from 'replies';
-
-// const cmds = require("replies.js");
-
 bot.on('ready', function() {
     console.log("Ready");
 });
 
 bot.on('message', (message) => {
+    const cmds = require("./replies.js");
     if(message == "popcorns"){
         message.channel.send("James is TEST, <:popfeels:477323348125286405>")
     }
