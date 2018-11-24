@@ -3,8 +3,9 @@ const commando = require('discord.js-commando');
 function Play(connection, message)
 {
     let server = play_queue[message.guild.id];
+    const broadcast = client.createVoiceBroadcast().playFile(server.queue[0]);
     const streamOptions = { seek: 0, volume: .25 };
-    server.dispatcher = connection.playFile(server.queue[0], streamOptions);
+    server.dispatcher = voiceConnection.playBroadcast(broadcast, streamOptions);
     server.dispatcher.setVolume(0.5);
     server.queue.shift();
     server.dispatcher.on("end", function(){
@@ -21,14 +22,14 @@ function Play(connection, message)
 
 }
 
-class Surprise_Local extends commando.Command
+class SM extends commando.Command
 {
     constructor(client)
     {
         super(client,{
-            name: 'sm1',
+            name: 'sm2',
             group: 'audio',
-            memberName: 'sm1',
+            memberName: 'sm2',
             description: 'Plays a song'
         });
     }
@@ -59,4 +60,4 @@ class Surprise_Local extends commando.Command
     }
 }
 
-module.exports = Surprise_Local;
+module.exports = SM;
