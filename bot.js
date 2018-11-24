@@ -11,6 +11,7 @@ global.play_queue = {};
 
 bot.on('ready', function() {
     console.log("Time-Warp Ready");
+    bot.user.setActivity('Diablo Immortal', {type: 'PLAYING'});
     // setInterval(() => {
     //     let date = new Date();
     //     let day_number = date.getDay();
