@@ -1,10 +1,5 @@
 export function processMessage(message) {
-  // switch(message) {
-  //     case "popcorns":
-  //       return "hi";
-  //   default:
-  //       return false
-  //   }
+  return "hello"
 }
 
 // function popcorns() {
