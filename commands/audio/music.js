@@ -43,7 +43,6 @@ class Music extends commando.Command
                 message.member.voiceChannel.join()
                     .then(connection =>{
                         var server = servers[message.guild.id];
-                        message.reply("Successfully Joined!");
                         server.queue.push(args);
                         Play(connection, message);
                     })

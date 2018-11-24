@@ -5,7 +5,7 @@ function Play(connection, message)
     let server = play_queue[message.guild.id];
     server.dispatcher = connection.playFile('./audio/surprise-motherfucker.mp3');
     server.queue.shift();
-    // sleep(2500);
+    sleep(2500);
     server.dispatcher.on("end", function(){
         if(server.queue[0])
         {
@@ -43,7 +43,6 @@ class Surprise_Local extends commando.Command
                 message.member.voiceChannel.join()
                     .then(connection =>{
                         let server = play_queue[message.guild.id];
-                        message.reply("Successfully Joined!");
                         server.queue.push('./audio/surprise-motherfucker.mp3');
                         Play(connection, message);
                     })

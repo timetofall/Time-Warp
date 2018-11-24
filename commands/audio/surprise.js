@@ -42,7 +42,6 @@ class Surprise extends commando.Command
                 message.member.voiceChannel.join()
                     .then(connection =>{
                         let server = play_queue[message.guild.id];
-                        message.reply("Successfully Joined!");
                         server.queue.push('https://timetofall.github.io/Time-Warp/surprise-motherfucker.mp3');
                         Play(connection, message);
                     })
