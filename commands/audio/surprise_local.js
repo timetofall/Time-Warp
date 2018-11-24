@@ -1,5 +1,5 @@
 const commando = require('discord.js-commando');
-// const play_functions = require('functions.js');
+const play_functions = require('functions.js');
 
 function Play(connection, message)
 {
@@ -46,7 +46,7 @@ class Surprise_Local extends commando.Command
                 message.member.voiceChannel.join()
                     .then(connection =>{
                         let server = play_queue[message.guild.id];
-                        server.queue.push('./audio/llama.mp3');
+                        server.queue.push('./audio/surprise-motherfucker.mp3');
                         Play(connection, message);
 
                     })
