@@ -13,7 +13,7 @@ bot.on('ready', function() {
 });
 
 bot.on("ready", () => {
-    bot.user.setActivity("Diablo Immortal", { type: "PLAYING"})
+    bot.user.setActivity("Diablo Immortal", { type: "PLAYING"});
 });
 
 bot.on('message', (message) => {
