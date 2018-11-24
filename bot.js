@@ -11,7 +11,19 @@ global.play_queue = {};
 
 bot.on('ready', function() {
     console.log("Time-Warp Ready");
-    bot.user.setActivity('Diablo Immortal', { type: 'PLAYING' });
+    setInterval(() => {
+        let date = new Date();
+        let day_number = date.getDay();
+        if(day_number === 6)
+        {
+            bot.user.setActivity('SALT', { type: 'WATCHING' });
+        }
+        else
+        {
+            bot.user.setActivity('Diablo Immortal', {type: 'PLAYING'});
+        }
+    }, 10000); // Runs this every 10 seconds.
+
 });
 
 bot.on('message', (message) => {
