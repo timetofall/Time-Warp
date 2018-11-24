@@ -5,16 +5,20 @@ function Play(connection, message)
     let server = play_queue[message.guild.id];
     server.dispatcher = connection.playFile(server.queue[0]);
     server.queue.shift();
-    server.dispatcher.on("end", function(){
-        if(server.queue[0])
-        {
-            Play(connection, message);
-        }
-        else
-        {
-            setTimeout(function(){ connection.disconnect(); }, 3000);
-        }
-    })
+    setTimeout(function(){
+        server.dispatcher.on("end", function(){
+            if(server.queue[0])
+            {
+                Play(connection, message);
+            }
+            else
+            {
+                connection.disconnect();
+
+            }
+        })
+    }, 3000);
+
 }
 
 class Surprise_Local extends commando.Command
