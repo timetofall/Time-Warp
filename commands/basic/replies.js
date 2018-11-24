@@ -1,7 +1,7 @@
 module.exports = {
     process: (message) => {
         // var message_list = message.content.str.toLowerCase().split(" ");
-        var message_string = message.content.stri.toLowerCase();
+        var message_string = message.content.str.toLowerCase();
         if(message_string.indexOf("james") !== -1)
         {
             return james();
