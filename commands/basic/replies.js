@@ -1,14 +1,13 @@
 module.exports = {
     process: (message) => {
-        switch(message.content) {
-        case "angelo":
-            return angelo();
-        default:
-            return false;
+        var message_list = message.content.split(" ");
+        if(message_list.includes("james"))
+        {
+            return james()
         }
     },
 };
 
-function angelo(){
-    return "where is angelo"
+function james(){
+    return "james is fat"
 }
