@@ -1,7 +1,6 @@
 module.exports = {
     process: (message) => {
-        var text;
-        switch(message) {
+        switch(message.content) {
         case "popcorns":
             return "Banana is good!";
         case "james":
@@ -9,7 +8,7 @@ module.exports = {
         case "Apple":
             return "How you like them apples?";
         default:
-            return text = "I have never heard of that fruit...";
+            return "I have never heard of that fruit...";
         }
     },
 };
