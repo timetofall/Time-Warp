@@ -1,9 +1,15 @@
 module.exports = {
     process: (message) => {
-            return popcorns()
+        if (message == "popcorns") {
+            return popcorns();
+        }
+        else
+        {
+            return "Shinnu is fat";
+        }
     },
 };
 
 function popcorns(){
-    return "James is fat"
+    return "James is ugly"
 }

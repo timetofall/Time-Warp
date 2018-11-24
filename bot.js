@@ -12,10 +12,8 @@ bot.on('ready', function() {
 
 bot.on('message', (message) => {
     const cmds = require("./commands/basic/replies.js");
-    if(message == "popcorns"){
-        let val = cmds.process(message);
-        message.channel.send(val);
-    }
+    let val = cmds.process(message);
+    message.channel.send(val);
 });
 
 bot.login(process.env.BOT_TOKEN); // grabs the token from Heroku Config Vars
