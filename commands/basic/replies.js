@@ -1,6 +1,6 @@
 module.exports = {
     process: (message) => {
-        let text;
+        var text;
         switch(message) {
         case "popcorns":
             text = "Banana is good!";
