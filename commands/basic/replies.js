@@ -1,11 +1,10 @@
 module.exports = {
     process: (message) => {
-        if (message == "popcorns") {
+        switch(message) {
+        case "popcorns":
             return popcorns();
-        }
-        else
-        {
-            return "Shinnu is fat";
+        default:
+            return "Shinnu is PHAT";
         }
     },
 };
