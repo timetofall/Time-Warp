@@ -13,7 +13,9 @@ bot.on('ready', function() {
 bot.on('message', (message) => {
     const cmds = require("./commands/basic/replies.js");
     let val = cmds.process(message);
-    message.channel.send(val);
+    if (val){
+        message.channel.send(val);
+    }
 });
 
 bot.login(process.env.BOT_TOKEN); // grabs the token from Heroku Config Vars

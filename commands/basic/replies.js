@@ -5,7 +5,7 @@ module.exports = {
         }
         else
         {
-            return "Shinnu is fat";
+            return false;
         }
     },
 };
