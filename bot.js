@@ -15,7 +15,9 @@ bot.on('ready', function() {
 });
 
 bot.on('message', (message) => {
-    message.channel.send("James is TEST, <:popfeels:477323348125286405>")
+    if(message == "popcorns"){
+        message.channel.send("James is TEST, <:popfeels:477323348125286405>")
+    }
 });
 
 bot.login(process.env.BOT_TOKEN); // grabs the token from Heroku Config Vars
