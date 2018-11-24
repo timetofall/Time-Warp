@@ -6,7 +6,7 @@ bot.registry.registerGroup('audio', 'Audio');
 bot.registry.registerDefaults();
 bot.registry.registerCommandsIn(__dirname + '/commands');
 
-import { processMessage } from 'commands/basic/replies';
+// import { hello } from 'commands/basic/replies';
 
 // global.servers = {};
 
