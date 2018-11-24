@@ -22,9 +22,9 @@ class Surprise_Local extends commando.Command
     constructor(client)
     {
         super(client,{
-            name: 'sm1',
+            name: 'kda',
             group: 'audio',
-            memberName: 'sm1',
+            memberName: 'kda',
             description: 'Plays a song'
         });
     }
