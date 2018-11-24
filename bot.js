@@ -12,10 +12,6 @@ bot.on('ready', function() {
     // bot.user.setActivity('Diablo Immortal', { type: 'PLAYING' });
 });
 
-bot.on("ready", () => {
-    bot.user.setActivity("Diablo Immortal", { type: "PLAYING"});
-});
-
 bot.on('message', (message) => {
     const cmds = require("./commands/basic/replies.js");
     if (message.author != bot.user) {
