@@ -35,13 +35,4 @@ bot.on('message', (message) => {
     }
 });
 
-window.sleep = function(milliseconds){
-  let start = new Date().getTime();
-  for (let i = 0; i < 1e7; i++) {
-    if ((new Date().getTime() - start) > milliseconds){
-      break;
-    }
-  }
-};
-
 bot.login(process.env.BOT_TOKEN); // grabs the token from Heroku Config Vars
