@@ -1,12 +1,13 @@
 module.exports = {
     process: (message) => {
-        var message_list = message.content.str.toLowerCase().split(" ");
-        // var message_string = message.content.str.toLowerCase();
-        // if(message_string.indexOf("james") !== -1)
+        // var message_lower = message.content.toLowerCase();
+        // var message_string = message_lower.split(" ")
+        // if(message_list.includes("james"))
         // {
         //     return james();
         // }
-        if(message_list.includes("james"))
+        var message_string = message.content.toLowerCase();
+        if(message_string.indexOf("james") !== -1)
         {
             return james();
         }
