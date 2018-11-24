@@ -3,7 +3,7 @@ const commando = require('discord.js-commando');
 function Play(connection, message)
 {
     let server = play_queue[message.guild.id];
-    server.dispatcher = connection.playArbitraryInput(server[0]);
+    server.dispatcher = connection.playArbitraryInput(server.queue[0]);
     server.queue.shift();
     server.dispatcher.on("end", function(){
         if(server.queue[0])
