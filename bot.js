@@ -6,7 +6,7 @@ bot.registry.registerGroup('audio', 'Audio');
 bot.registry.registerDefaults();
 bot.registry.registerCommandsIn(__dirname + '/commands');
 
-import { processMessage } from './commands/basic/replies';
+import { processMessage } from 'commands/basic/replies';
 
 global.servers = {};
 
@@ -15,10 +15,7 @@ bot.on('ready', function() {
 });
 
 bot.on('message', (message) => {
-    let reply = processMessage(message);
-    if(reply){
-        message.channel.send(reply)
-    }
+    receivedMessage.channel.send("James is TEST, <:popfeels:477323348125286405>")
 });
 
 bot.login(process.env.BOT_TOKEN); // grabs the token from Heroku Config Vars
