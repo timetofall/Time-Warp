@@ -11,5 +11,6 @@ module.exports = {
 };
 
 function james(){
-    return "james is fat"
+    let myArray = ['james is fat', 'james is ugly', 'james is PHAT'];
+    return myArray[Math.floor(Math.random() * myArray.length)];
 }
