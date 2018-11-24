@@ -6,7 +6,7 @@ bot.registry.registerGroup('audio', 'Audio');
 bot.registry.registerDefaults();
 bot.registry.registerCommandsIn(__dirname + '/commands');
 
-import hello from 'replies.js';
+import hello from 'replies';
 
 bot.on('ready', function() {
     console.log("Ready");
