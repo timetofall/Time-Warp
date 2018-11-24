@@ -5,6 +5,7 @@ function Play(connection, message)
     let server = play_queue[message.guild.id];
     server.dispatcher = connection.playFile('./audio/surprise-motherfucker.mp3');
     server.queue.shift();
+    // sleep(2500);
     server.dispatcher.on("end", function(){
         if(server.queue[0])
         {

@@ -17,7 +17,7 @@ function Play(connection, message)
     })
 }
 
-class Surprise_Local extends commando.Command
+class KDA extends commando.Command
 {
     constructor(client)
     {
@@ -56,4 +56,4 @@ class Surprise_Local extends commando.Command
     }
 }
 
-module.exports = Surprise_Local;
+module.exports = KDA;
