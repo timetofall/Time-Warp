@@ -3,7 +3,9 @@ const commando = require('discord.js-commando');
 function Play(connection, message)
 {
     let server = play_queue[message.guild.id];
-    server.dispatcher = connection.playFile('./audio/surprise-motherfucker.mp3');
+    const fs = require('fs');
+    const stream = fs.createReadStream(server.queue[0]);
+    server.dispatcher = connection.playStream(stream);
     server.queue.shift();
     server.dispatcher.on("end", function(){
         if(server.queue[0])
