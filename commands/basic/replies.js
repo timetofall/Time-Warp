@@ -1,15 +1,20 @@
 module.exports = {
     process: (message) => {
-        let response;
-        switch(message)
-        {
+        let text;
+        switch(message) {
         case "popcorns":
-            response = popcorns();
+            text = "Banana is good!";
+            break;
+        case "james":
+            text = "I am not a fan of orange.";
+            break;
+        case "Apple":
+            text = "How you like them apples?";
             break;
         default:
-            response = "Shinnu is PHAT";
+            text = "I have never heard of that fruit...";
         }
-        return response;
+        return text
     },
 };
 
