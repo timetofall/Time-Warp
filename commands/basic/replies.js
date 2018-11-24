@@ -1,5 +1,9 @@
 module.exports = {
     process: (message) => {
-            return "hello";
+            return popcorns()
     },
 };
+
+function popcorns(){
+    return "James is fat"
+}
