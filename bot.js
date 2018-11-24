@@ -1,29 +1,24 @@
-const Discord = require('discord.js');
+const Commando = require('discord.js-commando');
+const bot = new Commando.Client();
 
-const client = new Discord.Client();
+bot.registry.registerGroup('basic', 'Basic');
+bot.registry.registerGroup('audio', 'Audio');
+bot.registry.registerDefaults();
+bot.registry.registerCommandsIn(__dirname + '/commands');
 
- 
-
-client.on('ready', () => {
-
-    console.log('I am ready!');
-
+bot.on('ready', function() {
+    console.log("Time-Warp Ready");
+    //bot.user.setActivity('Diablo Immortal', { type: 'PLAYING' });
 });
 
- 
-
-client.on('message', message => {
-
-    if (message.content === 'ping') {
-
-       message.reply('pong');
-
-       }
-
+bot.on('message', (message) => {
+    const cmds = require("./commands/basic/replies.js");
+    if (message.author != bot.user) {
+        let val = cmds.process(message);
+        if (val){
+            message.channel.send(val);
+        }
+    }
 });
 
- 
-
-// THIS  MUST  BE  THIS  WAY
-
-client.login(process.env.BOT_TOKEN);//where BOT_TOKEN is the token of our bot
+bot.login(process.env.BOT_TOKEN); // grabs the token from Heroku Config Vars
