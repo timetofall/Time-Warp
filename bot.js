@@ -6,9 +6,9 @@ bot.registry.registerGroup('audio', 'Audio');
 bot.registry.registerDefaults();
 bot.registry.registerCommandsIn(__dirname + '/commands');
 
-import { processMessage } from 'commands/basic/replies';
+// import { processMessage } from 'commands/basic/replies';
 
-global.servers = {};
+// global.servers = {};
 
 bot.on('ready', function() {
     console.log("Ready");
