@@ -1,11 +1,16 @@
 module.exports = {
     process: (message) => {
-        switch(message) {
+        let response;
+        switch(message)
+        {
         case "popcorns":
-            return popcorns();
+            response = popcorns();
+            break;
         default:
-            return "Shinnu is PHAT";
+            response = "Shinnu is PHAT";
+            break;
         }
+        return response;
     },
 };
 
