@@ -1,8 +1,9 @@
 module.exports = {
     process: (message) => {
-        // let message_lower = message.content.toLowerCase();
+        let message_lower = message.content.toLowerCase();
         // let message_list = message_lower.split(" ");
         let message_list = message.content.split(" ");
+        message.channel.send(message_lower);
         if(message_list.includes("james"))
         {
             return james();
