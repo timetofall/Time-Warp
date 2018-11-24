@@ -8,7 +8,7 @@ bot.registry.registerCommandsIn(__dirname + '/commands');
 
 // import hello from 'replies';
 
-const cmds = require("replies.js");
+// const cmds = require("replies.js");
 
 bot.on('ready', function() {
     console.log("Ready");
