@@ -12,9 +12,11 @@ bot.on('ready', function() {
 
 bot.on('message', (message) => {
     const cmds = require("./commands/basic/replies.js");
-    let val = cmds.process(message);
-    if (val){
-        message.channel.send(val);
+    if (message.author != bot.user) {
+        let val = cmds.process(message);
+        if (val){
+            message.channel.send(val);
+        }
     }
 });
 
