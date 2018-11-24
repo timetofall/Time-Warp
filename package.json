@@ -2,14 +2,14 @@
   "name": "time-warp",
   "version": "1.0.0",
   "description": "Discord Bot",
-  "main": "index.js",
+  "main": "bot.js",
   "engines": {
     "node": "10.13.0",
     "npm": "6.4.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node bot.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/timetofall/Time-Warp#readme",
   "dependencies": {
-    "discord.js": "^11.4.2"
+    "discord.js": "^11.4.2",
+    "discord.js-commando": "^0.10.0"
   }
 }
