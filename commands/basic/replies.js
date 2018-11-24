@@ -5,7 +5,7 @@ module.exports = {
 
         let message_string = message.content.toLowerCase();
         let text = "";
-        if(test_names(message_string, ["james", "jamesy", "jamesie"]))
+        if(test_names(message_string, ["james", "jamesy", "jamesie", "retsiem"]))
         {
             text = text + cmds.james() + "\n";
         }

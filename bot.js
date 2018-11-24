@@ -14,16 +14,15 @@ bot.on('ready', function() {
     setInterval(() => {
         let date = new Date();
         let day_number = date.getDay();
-        if(day_number === 6)
+        if(day_number === 2 || day_number === 4)
         {
-            bot.user.setActivity('SALT', { type: 'WATCHING' });
+            bot.user.setActivity('SALT Raid', { type: 'WATCHING' });
         }
         else
         {
             bot.user.setActivity('Diablo Immortal', {type: 'PLAYING'});
         }
     }, 10000); // Runs this every 10 seconds.
-
 });
 
 bot.on('message', (message) => {
