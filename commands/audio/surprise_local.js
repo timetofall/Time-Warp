@@ -4,6 +4,7 @@ function Play(connection, message)
 {
     let server = play_queue[message.guild.id];
     server.dispatcher = connection.playFile(server.queue[0]);
+    server.dispatcher.setVolume(0.5);
     server.queue.shift();
     setTimeout(function(){
         server.dispatcher.on("end", function(){
