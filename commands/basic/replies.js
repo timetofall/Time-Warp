@@ -3,18 +3,14 @@ module.exports = {
         var text;
         switch(message) {
         case "popcorns":
-            text = "Banana is good!";
-            break;
+            return "Banana is good!";
         case "james":
-            text = "I am not a fan of orange.";
-            break;
+            return "I am not a fan of orange.";
         case "Apple":
-            text = "How you like them apples?";
-            break;
+            return "How you like them apples?";
         default:
-            text = "I have never heard of that fruit...";
+            return text = "I have never heard of that fruit...";
         }
-        return text
     },
 };
 
