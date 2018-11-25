@@ -3,7 +3,7 @@ module.exports = {
 
         const cmds = require("./replies_functions.js");
 
-        let message_string = message.content.toLowerCase() + message.mentions.users.array().toString();
+        let message_string = message.content.toLowerCase() + message.mentions.users.array().toString().toLowerCase();
         // message.channel.send(message_string);
         let text = "";
         if(test_names(message_string, ["James", "james", "jamesy", "jamesie", "retsiem"]))
