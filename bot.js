@@ -8,12 +8,12 @@ bot.registry.registerCommandsIn(__dirname + '/commands');
 
 global.servers = {};
 global.play_queue = {};
-global.raid_on = true;
 
 bot.on('ready', function() {
     console.log("Time-Warp Ready");
     const auto = require("./commands/basic/raid_time.js");
     auto.raid_time(bot);
+    // bot.user.setActivity('Diablo Immortal', {type: 'PLAYING'});
     setInterval(() => {
         let date = new Date();
         let day_number = date.getDay();
@@ -25,13 +25,12 @@ bot.on('ready', function() {
         {
             bot.user.setActivity('Diablo Immortal', {type: 'PLAYING'});
         }
-    }, 60 * 1000); // Runs this once a minute day.
+    }, 10000); // Runs this every 10 seconds.
 });
 
 bot.on('message', (message) => {
-    const cmds = require('./commands/basic');
+    const cmds = require('./commands/basic')
 
-    cmds.raid_time.raid_toggle(message);
     if (message.author !== bot.user) {
         let val = cmds.replies.process(message);
         if (val){
