@@ -1,25 +1,24 @@
 const commando = require('discord.js-commando');
-const audio_functions = require('./functions.js');
 
-// function Play(connection, message)
-// {
-//     let server = play_queue[message.guild.id];
-//     const streamOptions = { seek: 0, volume: 1.0 };
-//     server.dispatcher = connection.playFile(server.queue[0], streamOptions);
-//     server.queue.shift();
-//     server.dispatcher.on("end", function(){
-//         if(server.queue[0])
-//         {
-//             Play(connection, message);
-//         }
-//         else
-//         {
-//             connection.disconnect();
-//
-//         }
-//     })
-//
-// }
+function Play(connection, message)
+{
+    let server = play_queue[message.guild.id];
+    const streamOptions = { seek: 0, volume: 1.0 };
+    server.dispatcher = connection.playFile(server.queue[0], streamOptions);
+    server.queue.shift();
+    server.dispatcher.on("end", function(){
+        if(server.queue[0])
+        {
+            Play(connection, message);
+        }
+        else
+        {
+            connection.disconnect();
+
+        }
+    })
+
+}
 
 class Surprise_Local extends commando.Command
 {
@@ -47,8 +46,7 @@ class Surprise_Local extends commando.Command
                     .then(connection =>{
                         let server = play_queue[message.guild.id];
                         server.queue.push('./audio/surprise-motherfucker.mp3');
-                        // Play(connection, message);
-                        audio_functions.Play(connection, message)
+                        Play(connection, message);
                     })
                     .catch(console.log);
             }
