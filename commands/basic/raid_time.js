@@ -14,13 +14,11 @@ module.exports = {
 
             //let raid_test = channel && day_number === 0 && day_hour === 17 && day_minute === 28;
 
-            if(raid_tuesday || raid_wednesday || raid_sunday)
-            {
-                channel.send(`${val}, Raid starts in 15 minutes!`)
-            }
-            else
-            {
-
+            if (raid_on){
+                if(raid_tuesday || raid_wednesday || raid_sunday)
+                    {
+                        channel.send(`${val}, Raid starts in 15 minutes!`)
+                    }
             }
         }, 60000); // Runs this every 1 minute.
     },
@@ -29,11 +27,13 @@ module.exports = {
             if (message.content === "-raid off"){
                 raid_on = false;
                 console.log(raid_on);
+                message.channel.send("Raiding schedule is off");
             }
             if (message.content === "-raid on")
             {
                 raid_on = true;
                 console.log(raid_on);
+                message.channel.send("Raiding schedule is on");
             }
         }
     }
