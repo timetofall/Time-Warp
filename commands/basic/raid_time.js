@@ -26,4 +26,11 @@ module.exports = {
         }, 60000); // Runs this every 1 minute.
 
     },
+    raid_toggle: (message) => {
+        if (message.author !== bot.user) {
+            if (message.content === "-raid off"){
+                raid_on = !raid_on;
+            }
+        }
+    }
 };
