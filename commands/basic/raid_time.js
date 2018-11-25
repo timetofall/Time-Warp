@@ -1,7 +1,7 @@
 module.exports = {
     raid_time: (bot) => {
-        let val = bot.guilds.find(val => val == "SaltGuild").roles.find(val => val.name == "@raiders");
-        const channel = bot.channels.find(val => val.name === 'raid');
+        let val = bot.guilds.find(val => val == "GGGG").roles.find(val => val.name == "squad");
+        const channel = bot.channels.find(val => val.name === 'squad');
         setInterval(() => {
             let date = new Date();
             let day_number = date.getDay();
@@ -24,10 +24,16 @@ module.exports = {
             }
         }, 60000); // Runs this every 1 minute.
     },
-    raid_toggle: (message) => {
+    raid_toggle: (bot, message) => {
         if (message.author !== bot.user) {
             if (message.content === "-raid off"){
-                window.raid_on = !window.raid_on;
+                raid_on = false;
+                console.log(raid_on);
+            }
+            if (message.content === "-raid on")
+            {
+                raid_on = true;
+                console.log(raid_on);
             }
         }
     }
