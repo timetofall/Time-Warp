@@ -4,9 +4,9 @@ module.exports = {
         const cmds = require("./replies_functions.js");
 
         let message_string = message.content.toLowerCase() + message.mentions.users.array().toString();
-        message.channel.send(message_string);
+        // message.channel.send(message_string);
         let text = "";
-        if(test_names(message_string, ["james", "jamesy", "jamesie", "retsiem"]))
+        if(test_names(message_string, ["James", "james", "jamesy", "jamesie", "retsiem"]))
         {
             text = text + cmds.james() + "\n";
         }
