@@ -30,14 +30,8 @@ bot.on('ready', function() {
 
 bot.on('message', (message) => {
     const cmds = require('./commands/basic');
-
     cmds.raid_time.raid_toggle(bot, message);
-    if (message.author !== bot.user) {
-        let val = cmds.replies.process(message);
-        if (val){
-            message.channel.send(val);
-        }
-    }
+    cmds.replies.process(bot, message);
 });
 
 bot.login(process.env.BOT_TOKEN); // grabs the token from Heroku Config Vars
