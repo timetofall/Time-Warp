@@ -31,7 +31,7 @@ bot.on('message', (message) => {
 
     if (message.author != bot.user) {
 
-        message.channel.send(message.mentions.users.array().toString());
+        // message.channel.send(message.mentions.users.array().toString());
 
         let val = cmds.process(message);
         if (val){
