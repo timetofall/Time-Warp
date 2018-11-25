@@ -1,7 +1,7 @@
 module.exports = {
     raid_time: (bot) => {
-        let val = bot.guilds.find(val => val == "GGGG").roles.find(val => val.name == "squad");
-        const channel = bot.channels.find(val => val.name === 'squad');
+        let val = bot.guilds.find(val => val == "SaltGuild").roles.find(val => val.name == "@raiders");
+        const channel = bot.channels.find(val => val.name === 'raid');
         setInterval(() => {
             let date = new Date();
             let day_number = date.getDay();
