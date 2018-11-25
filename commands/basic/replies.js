@@ -1,21 +1,30 @@
+// this is the one you want to change when checking people
+function process_message(message){
+    const cmds = require("./replies_functions.js");
+    let message_string = message.content.toLowerCase();
+    let mentioned_string = get_mentioned_names(message);
+
+    message_string = message_string + mentioned_string;
+
+    let text = "";
+
+    if(test_names(message_string, ["james", "jamesy", "jamesie", "retsiem"]))
+    {
+        text = text + cmds.james() + "\n";
+    }
+    if(test_names(message_string, ["wes"]))
+    {
+        text = text + cmds.wes() + "\n";
+    }
+
+    return text
+}
+
 module.exports = {
     process: (bot, message) => {
         let text = "";
         if (message.author !== bot.user) {
-            const cmds = require("./replies_functions.js");
-            let message_string = message.content.toLowerCase();
-            let mentioned_string = get_mentioned_names(message);
-
-            message_string = message_string + mentioned_string;
-
-            if(test_names(message_string, ["james", "jamesy", "jamesie", "retsiem"]))
-            {
-                text = text + cmds.james() + "\n";
-            }
-            if(test_names(message_string, ["wes"]))
-            {
-                text = text + cmds.wes() + "\n";
-            }
+            text = process_message(message);
         }
         if (text){
             message.channel.send(text);
