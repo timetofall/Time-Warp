@@ -1,10 +1,10 @@
 const commando = require('discord.js-commando');
-// const play_functions = require('./functions.js');
+const play_functions = require('./functions.js');
 
 function Play(connection, message)
 {
     let server = play_queue[message.guild.id];
-    const streamOptions = { seek: 0, volume: .25 };
+    const streamOptions = { seek: 0, volume: 1.0 };
     server.dispatcher = connection.playFile(server.queue[0], streamOptions);
     server.queue.shift();
     server.dispatcher.on("end", function(){
