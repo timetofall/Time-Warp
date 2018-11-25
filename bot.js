@@ -32,7 +32,6 @@ bot.on('ready', function() {
 bot.on('message', (message) => {
     const cmds = require('./commands/basic');
 
-    cmds.raid_time.raid_toggle(message);
     if (message.author !== bot.user) {
         let val = cmds.replies.process(message);
         if (val){
