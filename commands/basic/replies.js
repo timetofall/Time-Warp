@@ -12,7 +12,7 @@ function process_message(message){
     {
         text = text + cmds.james() + "\n";
     }
-    if(test_names(message_string, ["wes"]))
+    if(test_names(message_string, ["wes", "thug"]))
     {
         text = text + cmds.wes() + "\n";
     }
