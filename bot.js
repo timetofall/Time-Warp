@@ -8,6 +8,7 @@ bot.registry.registerCommandsIn(__dirname + '/commands');
 
 global.servers = {};
 global.play_queue = {};
+global.raid_on = true;
 
 bot.on('ready', function() {
     console.log("Time-Warp Ready");
