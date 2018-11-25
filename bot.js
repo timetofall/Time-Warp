@@ -27,13 +27,10 @@ bot.on('ready', function() {
 });
 
 bot.on('message', (message) => {
-    const cmds = require("./commands/basic/replies.js");
+    const cmds = require('./commands/basic')
 
     if (message.author != bot.user) {
-
-        // message.channel.send(message.mentions.users.array().toString());
-
-        let val = cmds.process(message);
+        let val = cmds.replies.process(message);
         if (val){
             message.channel.send(val);
         }

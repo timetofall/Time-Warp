@@ -9,7 +9,7 @@ module.exports = {
         message_string = message_string + mentioned_string;
 
         let text = "";
-        if(test_names(message_string, ["James", "james", "jamesy", "jamesie", "retsiem"]))
+        if(test_names(message_string, ["james", "jamesy", "jamesie", "retsiem"]))
         {
             text = text + cmds.james() + "\n";
         }
