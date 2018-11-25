@@ -11,6 +11,8 @@ global.play_queue = {};
 
 bot.on('ready', function() {
     console.log("Time-Warp Ready");
+    const auto = require("./commands/basic/raid_time.js");
+    auto.raid_time(bot);
     // bot.user.setActivity('Diablo Immortal', {type: 'PLAYING'});
     setInterval(() => {
         let date = new Date();
