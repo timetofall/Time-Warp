@@ -1,6 +1,6 @@
 module.exports = {
     james(){
-        let myArray = ['install league james', 'james is fat', 'james is ugly', 'james is PHAT'];
+        let myArray = ['install league james'];
         return myArray[Math.floor(Math.random() * myArray.length)];
     },
 
