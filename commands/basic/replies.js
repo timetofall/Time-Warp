@@ -33,7 +33,7 @@ function process_message(message){
     {
         text = text + cmds.angelo() + "\n";
     }
-    if(test_names(message_string, ["phoneyy", "phoney", "dan", "rix", "riecks", "daniel"]))
+    if(test_names(message_string, ["phoneyy", "phoney", "dan", "rix", "riecks", "daniel", "rixxy"]))
     {
         text = text + cmds.phoneyy() + "\n";
     }
