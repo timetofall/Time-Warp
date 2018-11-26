@@ -16,6 +16,27 @@ function process_message(message){
     {
         text = text + cmds.wes() + "\n";
     }
+    //new
+    if(test_names(message_string, ["shinnu", "ivor"]))
+    {
+        text = text + cmds.shinnu() + "\n";
+    }
+    if(test_names(message_string, ["migals", "migs"]))
+    {
+        text = text + cmds.migals() + "\n";
+    }
+    if(test_names(message_string, ["chris", "zathik", "bob"]))
+    {
+        text = text + cmds.zathik() + "\n";
+    }
+    if(test_names(message_string, ["angelo", "shinihs", "angles"]))
+    {
+        text = text + cmds.angelo() + "\n";
+    }
+    if(test_names(message_string, ["phoneyy", "phoney", "dan", "rix", "riecks", "daniel"]))
+    {
+        text = text + cmds.phoneyy() + "\n";
+    }
 
     return text
 }
