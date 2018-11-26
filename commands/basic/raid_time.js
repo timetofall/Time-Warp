@@ -24,18 +24,21 @@ module.exports = {
     },
     raid_toggle: (bot, message) => {
         if (message.author !== bot.user) {
-            message.channel.send(message.author.tag);
-            if (message.content === "-raid off"){
-                raid_on = false;
-                console.log("Raid_Time Status:", raid_on);
-                message.channel.send("Raiding schedule is off");
+            if(message.author.tag === "Retsiem#6486" || message.author.tag === "Kanetsugu#7836"){
+                message.channel.send(message.author.tag);
+                if (message.content === "-raid off"){
+                    raid_on = false;
+                    console.log("Raid_Time Status:", raid_on);
+                    message.channel.send("Raiding schedule is off");
+                }
+                if (message.content === "-raid on")
+                {
+                    raid_on = true;
+                    console.log("Raid_Time Status:", raid_on);
+                    message.channel.send("Raiding schedule is on");
+                }
             }
-            if (message.content === "-raid on")
-            {
-                raid_on = true;
-                console.log("Raid_Time Status:", raid_on);
-                message.channel.send("Raiding schedule is on");
-            }
+
         }
     }
 };
