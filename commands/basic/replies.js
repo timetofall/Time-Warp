@@ -6,34 +6,36 @@ function process_message(message){
 
     message_string = message_string + mentioned_string;
 
+    let message_list = message_string.split(" ");
+
     let text = "";
 
-    if(test_names(message_string, ["james", "jamesy", "jamesie", "retsiem"]))
+    if(test_names(message_list, ["james", "jamesy", "jamesie", "retsiem"]))
     {
         text = text + cmds.james() + "\n";
     }
-    if(test_names(message_string, ["wes", "thug"]))
+    if(test_names(message_list, ["wes", "thug"]))
     {
         text = text + cmds.wes() + "\n";
     }
     //new
-    if(test_names(message_string, ["shinnu", "ivor"]))
+    if(test_names(message_list, ["shinnu", "ivor"]))
     {
         text = text + cmds.shinnu() + "\n";
     }
-    if(test_names(message_string, ["migals", "migs"]))
+    if(test_names(message_list, ["migals", "migs"]))
     {
         text = text + cmds.migals() + "\n";
     }
-    if(test_names(message_string, ["chris", "zathik", "bob"]))
+    if(test_names(message_list, ["chris", "zathik", "bob"]))
     {
         text = text + cmds.zathik() + "\n";
     }
-    if(test_names(message_string, ["angelo", "shinihs", "angles"]))
+    if(test_names(message_list, ["angelo", "shinihs", "angles"]))
     {
         text = text + cmds.angelo() + "\n";
     }
-    if(test_names(message_string, ["phoneyy", "phoney", "dan", "rix", "riecks", "daniel", "rixxy"]))
+    if(test_names(message_list, ["phoneyy", "phoney", "dan", "rix", "riecks", "daniel", "rixxy"]))
     {
         text = text + cmds.phoneyy() + "\n";
     }
@@ -54,14 +56,16 @@ module.exports = {
 };
 
 function test_names(message, names){
-    return names.find(name => message.indexOf(name) !== -1);
+    // return names.find(name => message.indexOf(name) !== -1);
+    // names.some(a => list.indexOf(a) >= 0);
+    return names.some(n => message.indexOf(n) >= 0);
 }
 
 function get_mentioned_names(message){
     let mentioned_array = message.mentions.members.array();
     let mentioned_users = "";
 
-    for (i = 0; i < mentioned_array.length; i++){
+    for (let i = 0; i < mentioned_array.length; i++){
         mentioned_users += mentioned_array[i].user.username.toLowerCase() + " ";
         mentioned_users += mentioned_array[i].displayName.toLowerCase() + " ";
     }
