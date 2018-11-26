@@ -26,13 +26,13 @@ module.exports = {
         if (message.author !== bot.user) {
             if (message.content === "-raid off"){
                 raid_on = false;
-                console.log(raid_on);
+                console.log("Raid_Time Status:", raid_on);
                 message.channel.send("Raiding schedule is off");
             }
             if (message.content === "-raid on")
             {
                 raid_on = true;
-                console.log(raid_on);
+                console.log("Raid_Time Status:", raid_on);
                 message.channel.send("Raiding schedule is on");
             }
         }

@@ -12,8 +12,10 @@ global.raid_on = true;
 
 bot.on('ready', function() {
     console.log("Time-Warp Ready");
+    console.log("Raid_Time Status:", raid_on);
     const auto = require("./commands/basic/raid_time.js");
     auto.raid_time(bot);
+
     setInterval(() => {
         let date = new Date();
         let day_number = date.getDay();
