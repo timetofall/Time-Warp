@@ -24,6 +24,7 @@ module.exports = {
     },
     raid_toggle: (bot, message) => {
         if (message.author !== bot.user) {
+            message.channel.send(message.author.tag);
             if (message.content === "-raid off"){
                 raid_on = false;
                 console.log("Raid_Time Status:", raid_on);
