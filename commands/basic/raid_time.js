@@ -17,7 +17,7 @@ module.exports = {
             if (raid_on){
                 if(raid_tuesday || raid_wednesday || raid_sunday)
                     {
-                        channel.send(`${val}, Raid starts in 10 minutes!`)
+                        channel.send(`${val}, Raid starts in 15 minutes!`)
                     }
             }
         }, 60000); // Runs this every 1 minute.
