@@ -8,9 +8,9 @@ module.exports = {
             let day_hour = date.getHours();
             let day_minute = date.getMinutes();
             let day_second = date.getSeconds();
-            let raid_tuesday = channel && day_number === 2 && day_hour === 21 && day_minute === 49; //&& day_second === 00; //if minute is at 39 it will do it at 40
-            let raid_wednesday = channel && day_number === 3 && day_hour === 21 && day_minute === 49;
-            let raid_sunday = channel && day_number === 0 && day_hour === 20 && day_minute === 49;
+            let raid_tuesday = channel && day_number === 2 && day_hour === 20 && day_minute === 44; //&& day_second === 00; //if minute is at 39 it will do it at 40
+            let raid_wednesday = channel && day_number === 3 && day_hour === 20 && day_minute === 44;
+            let raid_sunday = channel && day_number === 0 && day_hour === 19 && day_minute === 44;
 
             //let raid_test = channel && day_number === 0 && day_hour === 17 && day_minute === 28;
 
