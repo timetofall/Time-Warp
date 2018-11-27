@@ -21,7 +21,7 @@ module.exports = {
                         console.log("ITS WORKIN BROTHER", raid_on);
                     }
             }
-        }, 60000); // Runs this every 1 minute.
+        }, 10000); // Runs this every 1 minute.
     },
     raid_toggle: (bot, message) => {
         if (message.author !== bot.user) {

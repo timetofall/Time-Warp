@@ -13,12 +13,19 @@ global.raid_on = true;
 bot.on('ready', function() {
     console.log("Time-Warp Ready");
     console.log("Raid_Time Status:", raid_on);
+
+    console.log("Day_Number: ", day_number);
+    console.log("Day_Hours: ", day_hour);
+    console.log("Day_Minutes: ", day_minute);
+
     const auto = require("./commands/basic/raid_time.js");
     auto.raid_time(bot);
 
     setInterval(() => {
         let date = new Date();
         let day_number = date.getDay();
+        let day_hour = date.getHours();
+        let day_minute = date.getMinutes();
         if(day_number === 2 || day_number === 4)
         {
             bot.user.setActivity('SALT Raid', { type: 'WATCHING' });
