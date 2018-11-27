@@ -1,6 +1,6 @@
 module.exports = {
     james(){
-        let myArray = ['install league james'];
+        let myArray = ['I really thing James should play league again', 'When is James going to install league?'];
         return myArray[Math.floor(Math.random() * myArray.length)];
     },
 
@@ -30,7 +30,7 @@ module.exports = {
     },
 
     phoneyy(){
-        let myArray = ["Fuck off, Dan ;)"];
+        let myArray = ["Fuck off, Dan :wink:"];
         return myArray[Math.floor(Math.random() * myArray.length)];
     },
 };
