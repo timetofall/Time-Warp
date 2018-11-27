@@ -13,7 +13,8 @@ global.raid_on = true;
 bot.on('ready', function() {
     console.log("Time-Warp Ready");
     console.log("Raid_Time Status:", raid_on);
-
+    
+    let date = new Date();
     let day_number = date.getDay();
     let day_hour = date.getHours();
     let day_minute = date.getMinutes();
