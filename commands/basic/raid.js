@@ -14,8 +14,6 @@ module.exports = {
             let raid_wednesday = channel && day_number === 4 && day_hour === 1 && day_minute === 44;
             let raid_sunday = channel && day_number === 1 && day_hour === 0 && day_minute === 44;
 
-            //let raid_test = channel && day_number === 2 && day_hour === 0; // && day_minute === 28;
-
             if (raid_on){
                 if(raid_tuesday || raid_wednesday || raid_sunday)
                     {
