@@ -13,14 +13,6 @@ global.raid_on = true;
 bot.on('ready', function() {
     console.log("Time-Warp Ready");
     console.log("Raid_Time Status:", raid_on);
-    
-    let date = new Date();
-    let day_number = date.getDay();
-    let day_hour = date.getHours();
-    let day_minute = date.getMinutes();
-    console.log("Day_Number: ", day_number);
-    console.log("Day_Hours: ", day_hour);
-    console.log("Day_Minutes: ", day_minute);
 
     const auto = require("./commands/basic/raid_time.js");
     auto.raid_time(bot);
@@ -28,17 +20,15 @@ bot.on('ready', function() {
     setInterval(() => {
         let date = new Date();
         let day_number = date.getDay();
-        let day_hour = date.getHours();
-        let day_minute = date.getMinutes();
-        if(day_number === 2 || day_number === 4)
+        if(day_number === 3 || day_number === 4)
         {
-            bot.user.setActivity('SALT Raid', { type: 'WATCHING' });
+            bot.user.setActivity('Salt Raid', { type: 'WATCHING' });
         }
         else
         {
             bot.user.setActivity('Diablo Immortal', {type: 'PLAYING'});
         }
-    }, 10000); // Runs this every 10 seconds.
+    }, 60000); // Runs this every 1 Minute.
 });
 
 bot.on('message', (message) => {
