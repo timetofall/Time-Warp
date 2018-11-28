@@ -1,5 +1,7 @@
 const Commando = require('discord.js-commando');
-const bot = new Commando.Client();
+const bot = new commando.Client({
+    unknownCommandResponse: false
+});
 
 bot.registry.registerGroup('basic', 'Basic');
 bot.registry.registerGroup('audio', 'Audio');
