@@ -1,5 +1,5 @@
 const Commando = require('discord.js-commando');
-const bot = new commando.Client({
+const bot = new Commando.Client({
     unknownCommandResponse: false
 });
 
