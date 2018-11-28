@@ -62,13 +62,13 @@ function test_names(message, names){
 }
 
 function get_mentioned_names(message){
-    let mentioned_array = message.mentions.members.array();
     let mentioned_users = "";
-
-    for (let i = 0; i < mentioned_array.length; i++){
-        mentioned_users += mentioned_array[i].user.username.toLowerCase() + " ";
-        mentioned_users += mentioned_array[i].displayName.toLowerCase() + " ";
+    if (message.mentions.members){
+        let mentioned_array = message.mentions.members.array();
+        for (let i = 0; i < mentioned_array.length; i++){
+            mentioned_users += mentioned_array[i].user.username.toLowerCase() + " ";
+            mentioned_users += mentioned_array[i].displayName.toLowerCase() + " ";
+        }
     }
-
     return mentioned_users;
 }
