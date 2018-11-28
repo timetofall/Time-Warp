@@ -1,6 +1,7 @@
 module.exports = {
     raid_time: (bot) => {
         let val = bot.guilds.find(val => val == "SaltGuild").roles.find(val => val.name == "@raiders");
+		let val1 = bot.guilds.find(val => val == "SaltGuild").roles.find(val => val.name == "@trials");
         const channel = bot.channels.find(val => val.name === 'raid');
         setInterval(() => {
             let date = new Date();
@@ -15,10 +16,15 @@ module.exports = {
             let raid_sunday = channel && day_number === 1 && day_hour === 0 && day_minute === 44;
 
             if (raid_on){
-                if(raid_tuesday || raid_wednesday || raid_sunday)
+                if(raid_tuesday)
                     {
-                        channel.send(`${val}, Raid starts in about 15 minutes!`)
+                        channel.send(`${val1} ${val}, Raid starts in about 15 minutes!`)
+						channel.send(`${val1} ${val}, DON'T FORGET TO BUY YOUR REROLLS!`)
                     }
+				else if(raid_wednesday || raid_sunday)
+					{
+						channel.send(`${val1} ${val}, Raid starts in about 15 minutes!`)
+					}
             }
         }, 60000); // Runs this every 1 minute.
     },
