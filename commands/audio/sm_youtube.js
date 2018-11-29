@@ -1,9 +1,12 @@
 const commando = require('discord.js-commando');
+const YTDL = require('ytdl-core');
+
+// https://www.youtube.com/watch?v=_bSEfx6D8mA
 
 function Play(connection, message)
 {
-    let server = play_queue[message.guild.id];
-    server.dispatcher = connection.playArbitraryInput(server.queue[0]);
+    var server = servers[message.guild.id];
+    server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"}));
     server.queue.shift();
     server.dispatcher.on("end", function(){
         if(server.queue[0])
@@ -17,14 +20,14 @@ function Play(connection, message)
     })
 }
 
-class Surprise_online extends commando.Command
+class Music extends commando.Command
 {
     constructor(client)
     {
         super(client,{
-            name: 'smo',
+            name: 'sm',
             group: 'audio',
-            memberName: 'smo',
+            memberName: 'sm',
             description: 'Plays a song'
         });
     }
@@ -35,14 +38,14 @@ class Surprise_online extends commando.Command
         {
             if(!message.guild.voiceConnection)
             {
-                if(!play_queue[message.guild.id])
+                if(!servers[message.guild.id])
                 {
-                    play_queue[message.guild.id] = {queue: []}
+                    servers[message.guild.id] = {queue: []}
                 }
                 message.member.voiceChannel.join()
                     .then(connection =>{
-                        let server = play_queue[message.guild.id];
-                        server.queue.push('https://timetofall.github.io/Time-Warp/surprise-motherfucker.mp3');
+                        var server = servers[message.guild.id];
+                        server.queue.push('https://www.youtube.com/watch?v=_bSEfx6D8mA');
                         Play(connection, message);
                     })
                     .catch(console.log);
@@ -55,4 +58,4 @@ class Surprise_online extends commando.Command
     }
 }
 
-module.exports = Surprise_online;
+module.exports = Music;

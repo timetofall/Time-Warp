@@ -1,6 +1,8 @@
 const commando = require('discord.js-commando');
 const YTDL = require('ytdl-core');
 
+// https://www.youtube.com/watch?v=_bSEfx6D8mA
+
 function Play(connection, message)
 {
     var server = servers[message.guild.id];
