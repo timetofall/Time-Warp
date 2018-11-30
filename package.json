@@ -7,7 +7,7 @@
     "start": "node bot.js"
   },
   "dependencies": {
-    "discord.js": "11.4.2",
+    "discord.js": "github:discordjs/discord.js",
     "discord.js-commando": "^0.10.0",
     "request": "2.81.0",
     "ytdl-core": "0.20.2",
