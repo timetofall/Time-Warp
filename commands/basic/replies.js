@@ -2,9 +2,9 @@
 function process_message(message){
     const cmds = require("./replies_functions.js");
     let message_string = message.content.toLowerCase();
-    let mentioned_string = get_mentioned_names(message);
+    // let mentioned_string = get_mentioned_names(message);
 
-    message_string = message_string + mentioned_string;
+    // message_string = message_string + mentioned_string;
 
     let message_list = message_string.split(" ");
 
