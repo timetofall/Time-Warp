@@ -31,7 +31,7 @@ module.exports = {
     raid_toggle: (bot, message) => {
         if (message.author !== bot.user) {
             // install league james
-            if(message.author.tag === "Retsiem#6486" || message.author.tag === "Kanetsugu#7836"){
+            if(message.author.tag === "Retsiem#6486" || message.author.tag === "Kanetsugu#7836" || message.author.tag === "kwandar#3006"){
                 if (message.content === "-raid off"){
                     raid_on = false;
                     console.log("Raid_Time Status:", raid_on);
