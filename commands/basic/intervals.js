@@ -17,16 +17,20 @@ function status(bot)
         {
             if (raid_on)
             {
-                bot.user.setActivity('Salt Raid', { type: 'WATCHING' });
+                bot.user.setActivity('Salt Raid (R+)', { type: 'WATCHING' });
             }
             else
             {
-                bot.user.setActivity('Diablo Immortal', {type: 'PLAYING'});
+                bot.user.setActivity('Diablo Immortal (R-)', {type: 'PLAYING'});
             }
+        }
+        else if(raid_on)
+        {
+            bot.user.setActivity('Diablo Immortal (R+)', {type: 'PLAYING'});
         }
         else
         {
-            bot.user.setActivity('Diablo Immortal', {type: 'PLAYING'});
+            bot.user.setActivity('Diablo Immortal (R-)', {type: 'PLAYING'});
         }
     }, 60 * 1000);
 }
