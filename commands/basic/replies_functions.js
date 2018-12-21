@@ -20,7 +20,7 @@ module.exports = {
     },
 
     zathik(){
-        let myArray = ["Did you hear that Bob is an officer now? Y I K E S", "Learn to use Fortifying Brew, Chris"];
+        let myArray = ["Did you hear that Bob is an officer now? Y I K E S", "When will Bob learn to use Fortifying Brew"];
         return myArray[Math.floor(Math.random() * myArray.length)];
     },
 
