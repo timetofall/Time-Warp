@@ -8,7 +8,7 @@ module.exports = {
             let day_number = date.getDay();
             let day_hour = date.getHours();
             let day_minute = date.getMinutes();
-            let day_second = date.getSeconds();
+            //let day_second = date.getSeconds();
             
             //Day & Hour is in GMT Time
             let raid_tuesday = channel && day_number === 3 && day_hour === 1 && day_minute === 44; //&& day_second === 00; //if minute is at 39 it will do it at 40
