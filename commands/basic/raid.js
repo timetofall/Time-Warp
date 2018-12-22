@@ -35,13 +35,13 @@ module.exports = {
                 if (message.content === "-raid off"){
                     raid_on = false;
                     console.log("Raid_Time Status:", raid_on);
-                    message.channel.send("Raiding schedule is off");
+                    message.channel.send("Raiding schedule is OFF");
                 }
                 if (message.content === "-raid on")
                 {
                     raid_on = true;
                     console.log("Raid_Time Status:", raid_on);
-                    message.channel.send("Raiding schedule is on");
+                    message.channel.send("Raiding schedule is ON");
                 }
             }
 
