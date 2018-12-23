@@ -10,15 +10,12 @@ bot.registry.registerCommandsIn(__dirname + '/commands');
 
 global.servers = {};
 global.play_queue = {};
-global.raid_on = true;
 
 bot.on('ready', function() {
     console.log("Time-Warp Ready");
-    console.log("Raid_Time Status:", raid_on);
 
     const auto = require("./commands/basic");
     auto.raid.raid_time(bot);
-    auto.intervals.botActivity(bot);
 });
 
 bot.on('message', (message) => {

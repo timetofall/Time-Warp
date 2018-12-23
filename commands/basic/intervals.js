@@ -1,6 +1,8 @@
 /* Bot Activity Types 
 PLAYING, STREAMING, LISTENING, WATCHING
 */
+
+/*
 function botActivity(bot)
 {
     bot.user.setActivity('Starting Up');
@@ -18,3 +20,5 @@ function botActivity(bot)
 }
 
 exports.botActivity = botActivity;
+
+*/

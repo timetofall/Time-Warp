@@ -7,11 +7,12 @@
     "start": "node bot.js"
   },
   "dependencies": {
-    "discord.js": "11.4.2",
+    "discord.js": "^11.4.2",
     "discord.js-commando": "^0.10.0",
-    "request": "2.81.0",
-    "ytdl-core": "0.20.2",
     "ffmpeg": "0.0.4",
-    "node-opus": "0.2.7"
+    "mongoose": "^5.4.0",
+    "node-opus": "0.2.7",
+    "request": "2.81.0",
+    "ytdl-core": "^0.20.2"
   }
 }
