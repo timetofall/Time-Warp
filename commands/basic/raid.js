@@ -1,7 +1,7 @@
 //Line 2-6 is requiring necessary files and connecting to the DB
 const mongoose = require("mongoose");
 const raidStatus = require("../../models/raidStatus.js");
-mongoose.connect(MONGODB_URI, {
+mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true
 });
 
