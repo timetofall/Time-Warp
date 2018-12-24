@@ -20,15 +20,15 @@ module.exports = {
     raidAttendanceDisplay: (bot, message) => {
         if (message.content.startsWith("!dar")){
             let allowedRole = message.guild.roles.find(role => role.name === "@officers");
-            if (message.member.roles.has(allowedRole.id)) {
-                message.channel.fetchMessage(message.content.slice(4, message.content.length))
+            if (message.member.roles.has(allowedRole.id)) { 
+                bot.channels.find("name","raidattendance").fetchMessage(message.content.slice(4, message.content.length)) //raidattendance channel
                 .then(message => {
                 //console.log(message.content)
                 //console.log(message.reactions.get('❌').fetchUsers(100))
                 message.reactions.get('❌').fetchUsers(100)
                 .then(reactions => {
                     // console.log(reactions.map(g => g.username).join("\n"));
-                    message.channel.send({ embed: {
+                    bot.channels.find("name","officers").send({ embed: { // Officers channel
                         //author: {
                         //name: bot.user.username,
                         //icon_url: bot.user.avatarURL
