@@ -69,14 +69,15 @@ module.exports = {
                             channel.send(`${val1} ${val}, Raid starts in about 15 minutes!`)
                             channel.send(`${val1} ${val}, DON'T FORGET TO BUY YOUR REROLLS!`)
                         }
-				    else if(raid_wednesday || raid_sunday)
-					    {
+                    else if(raid_wednesday || raid_sunday)
+                        {
                             channel.send(`${val1} ${val}, Raid starts in about 15 minutes!`)
-					    }
-            }
+                        }
+                }
             }); // raidStatus.findOne
         }, 60000); // Runs this every 1 minute.
     },
+
     raid_toggle: (bot, message) => {
         if (message.author !== bot.user) {
             // install league james
