@@ -96,5 +96,19 @@ module.exports = {
                 }
             }
         }
+    },
+    auto_SetActivity: (bot) => { // On bot start-up this module checks if raid_status is true or false in MongoDB and sets the Activity
+        raidStatus.findOne(function (err, raidStatuses) {
+            if(err) return console.error(err);
+
+            if(raidStatuses.raid_status)
+            {
+                bot.user.setActivity('Diablo Immortal (R+)', { type: 'PLAYING' });
+            }
+            else
+            {
+                bot.user.setActivity('Diablo Immortal (R-)', { type: 'PLAYING' });
+            }
+        });
     }
 };

@@ -16,6 +16,7 @@ bot.on('ready', function() {
 
     const auto = require("./commands/basic");
     auto.raid.raid_time(bot);
+    auto.raid.auto_SetActivity(bot);
 });
 
 bot.on('message', (message) => {
