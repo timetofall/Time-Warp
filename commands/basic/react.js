@@ -21,7 +21,7 @@ module.exports = {
         if (message.content.startsWith("!dar")){
             let allowedRole = message.guild.roles.find(role => role.name === "@officers");
             if (message.member.roles.has(allowedRole.id)) { 
-                bot.channels.find("name","raidattendance").fetchMessage(message.content.slice(4, message.content.length)) //raidattendance channel
+                bot.channels.find("name","raidattendance").fetchMessage(message.content.slice(4, message.content.length)) //raidattendance channel   YIKES
                 .then(message => {
                 //console.log(message.content)
                 //console.log(message.reactions.get('❌').fetchUsers(100))
