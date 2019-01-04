@@ -18,6 +18,7 @@ function raid_time_status(){
     raidStatus.findOne(function (err, raidStatuses) {
         if(err) return console.error(err);
         console.log("Raid_Status:", raidStatuses.raid_status);
+        console.log("Monday:", raidStatuses.monday);
     });
 }
 
@@ -41,6 +42,24 @@ function raid_status_on(){
     });
 }
 
+function raid_monday_on(){
+    raidStatus.updateOne({ monday: false }, { $set: { monday: true } }, { new: true }, function(err, raidStatuses) {
+        if (err) {
+            console.log("Unable to set monday to TRUE");
+        }
+        raid_time_status();
+    });
+}
+
+function raid_monday_off(){
+    raidStatus.updateOne({ monday: true }, { $set: { monday: false } }, { new: true }, function(err, raidStatuses) {
+        if (err) {
+            console.log("Unable to set monday to FALSE");
+        }
+        raid_time_status();
+    });
+}
+
 module.exports = {
     raid_time: (bot) => {
         let val = bot.guilds.find(val => val == "SaltGuild").roles.find(val => val.name == "@raiders");
@@ -55,6 +74,7 @@ module.exports = {
             //let day_second = date.getSeconds();
             
             //Day & Hour is in GMT Time
+            let raid_monday = channel && day_number === 2 && day_hour === 1 && day_minute === 44;
             let raid_tuesday = channel && day_number === 3 && day_hour === 1 && day_minute === 44; //&& day_second === 00; //if minute is at 39 it will do it at 40
             let raid_wednesday = channel && day_number === 4 && day_hour === 1 && day_minute === 44;
             let raid_sunday = channel && day_number === 1 && day_hour === 0 && day_minute === 44;
@@ -62,38 +82,69 @@ module.exports = {
             // Opens the data from the DB and if raidStatuses.raid_status is true, it will do the if statements inside)
             raidStatus.findOne(function (err, raidStatuses) {
                 if(err) return console.error(err);
-
-                if(raidStatuses.raid_status){
-                    if(raid_tuesday)
-                        {
-                            channel.send(`${val1} ${val}, Raid starts in about 15 minutes!`)
-                            channel.send(`${val1} ${val}, DON'T FORGET TO BUY YOUR REROLLS!`)
-                        }
-                    else if(raid_wednesday || raid_sunday)
-                        {
-                            channel.send(`${val1} ${val}, Raid starts in about 15 minutes!`)
-                        }
+                    
+            if(raidStatuses.raid_status){
+                if(raid_tuesday)
+                    {
+                        channel.send(`${val1} ${val}, Raid starts in about 15 minutes!`)
+                        channel.send(`${val1} ${val}, DON'T FORGET TO BUY YOUR REROLLS!`)
+                    }
+                else if(raid_wednesday || raid_sunday)
+                    {
+                        channel.send(`${val1} ${val}, Raid starts in about 15 minutes!`)
+                    }
+                else if(raid_monday)
+                {
+                    if(raidStatuses.monday)
+                    {
+                        channel.send(`${val1} ${val}, Monday raid starts in about 15 minutes! 🍆💦`)
+                    }
                 }
+            }
             }); // raidStatus.findOne
         }, 60000); // Runs this every 1 minute.
     },
-
     raid_toggle: (bot, message) => {
         if (message.author !== bot.user) {
-            // install league james
-            if(message.author.tag === "Retsiem#6486" || message.author.tag === "Kanetsugu#7836" || message.author.tag === "kwandar#3006"){
+            let allowedRole = message.guild.roles.find(role => role.name === "@officers");
+            if (message.member.roles.has(allowedRole.id) || message.author.tag === "Retsiem#6486" || message.author.tag === "Kanetsugu#7836" || message.author.tag === "kwandar#3006") {
+            //if(message.author.tag === "Retsiem#6486" || message.author.tag === "Kanetsugu#7836" || message.author.tag === "kwandar#3006"){
+
                 if (message.content === "-raid off")
                 {
                     raid_status_off();
-                    bot.user.setActivity('Diablo Immortal (R-)', {type: 'PLAYING'});
+                    bot.user.setActivity('WoW Classic (R-) -cmds', {type: 'PLAYING'});
                     message.channel.send("Raiding schedule is OFF");
                 }
                 if (message.content === "-raid on")
                 {
                     raid_status_on();
-                    bot.user.setActivity('Diablo Immortal (R+)', { type: 'PLAYING' });
+                    bot.user.setActivity('WoW Classic (R+) -cmds', { type: 'PLAYING' });
                     message.channel.send("Raiding schedule is ON");
                 }
+                if (message.content === "-raid_monday on")
+                {
+                    raid_monday_on();
+                    message.channel.send("Monday raid is ON");
+                }
+                if (message.content === "-raid_monday off")
+                {
+                    raid_monday_off();
+                    message.channel.send("Monday raid is OFF");
+                }
+                if (message.content === "-raid") //raid status command to display current settings
+                {
+                    raidStatus.findOne(function (err, raidStatuses) {
+                        if(err) return console.error(err);
+                        if(raidStatuses.raid_status){rs = "ON";} else{rs = "OFF";}
+                        if(raidStatuses.monday){mr = "ON";} else{mr = "OFF";}
+                        message.channel.send("Raiding Schedule: " + rs + "\n" + "Monday Raid: " + mr); // condensed to one line
+                        //message.channel.send("Monday Raid: " + mr);
+                    });
+                }
+            }
+            else if(!message.member.roles.has(allowedRole.id)){
+                message.channel.send("🤔 You are not an Officer");
             }
         }
     },
@@ -103,11 +154,11 @@ module.exports = {
 
             if(raidStatuses.raid_status)
             {
-                bot.user.setActivity('Diablo Immortal (R+)', { type: 'PLAYING' });
+                bot.user.setActivity('WoW Classic (R+) -cmds', { type: 'PLAYING' });
             }
             else
             {
-                bot.user.setActivity('Diablo Immortal (R-)', { type: 'PLAYING' });
+                bot.user.setActivity('WoW Classic (R-) -cmds', { type: 'PLAYING' });
             }
         });
     }
