@@ -25,6 +25,7 @@ bot.on('message', (message) => {
     cmds.replies.process(bot, message);
     cmds.react.raidAttendance(bot, message);
     cmds.react.raidAttendanceDisplay(bot, message);
+    cmds.commands.commands(bot, message);
 });
 
 bot.login(process.env.BOT_TOKEN); // grabs the token from Heroku Config Vars

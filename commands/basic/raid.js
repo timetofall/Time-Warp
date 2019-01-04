@@ -132,7 +132,7 @@ module.exports = {
                     raid_monday_off();
                     message.channel.send("Monday raid is OFF");
                 }
-                if (message.content === "-raid") //raid status command to display current settings
+                if (message.content === "-raid_info") //raid status command to display current settings
                 {
                     raidStatus.findOne(function (err, raidStatuses) {
                         if(err) return console.error(err);
@@ -142,9 +142,6 @@ module.exports = {
                         //message.channel.send("Monday Raid: " + mr);
                     });
                 }
-            }
-            else if(!message.member.roles.has(allowedRole.id)){
-                message.channel.send("🤔 You are not an Officer");
             }
         }
     },
