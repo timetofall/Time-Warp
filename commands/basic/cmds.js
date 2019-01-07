@@ -12,6 +12,7 @@ module.exports = {
                 "\n__Raid(Officers)__\n" +
                 "**-raid on|off:** Turns the whole raiding schedule on/off. (R+)(R-)\n    Ex: `-raid on`\n" +
                 "**-raid_monday on|off:** Turns monday raid announcement on/off.\n    Ex: `-raid_monday off`\n" +
+                "**-raid_sunday on|off:** Turns sunday raid announcement on/off.\n    Ex: `-raid_sunday on`\n" +
                 "**-raid_info:** Displays on/off state of raiding sched. and monday raid.\n" +
                 "\n__Raid SPECIAL(Officers)__\n" +
                 "**!ra:** Creates raid attendance posts (use in #raidattendance ONLY) \n      Ex. `!ra Wednesday - 01/09/2019 - Mythic @ 9:00 EST`\n" +
