@@ -19,6 +19,7 @@ function raid_time_status(){
         if(err) return console.error(err);
         console.log("Raid_Status:", raidStatuses.raid_status);
         console.log("Monday:", raidStatuses.monday);
+        console.log("Sunday:", raidStatuses.sunday);
     });
 }
 
@@ -51,10 +52,28 @@ function raid_monday_on(){
     });
 }
 
+function raid_sunday_on(){
+    raidStatus.updateOne({ sunday: false }, { $set: { sunday: true } }, { new: true }, function(err, raidStatuses) {
+        if (err) {
+            console.log("Unable to set sunday to TRUE");
+        }
+        raid_time_status();
+    });
+}
+
 function raid_monday_off(){
     raidStatus.updateOne({ monday: true }, { $set: { monday: false } }, { new: true }, function(err, raidStatuses) {
         if (err) {
             console.log("Unable to set monday to FALSE");
+        }
+        raid_time_status();
+    });
+}
+
+function raid_sunday_off(){
+    raidStatus.updateOne({ sunday: true }, { $set: { sunday: false } }, { new: true }, function(err, raidStatuses) {
+        if (err) {
+            console.log("Unable to set sunday to FALSE");
         }
         raid_time_status();
     });
@@ -89,7 +108,7 @@ module.exports = {
                         channel.send(`${val1} ${val}, Raid starts in about 15 minutes!`)
                         channel.send(`${val1} ${val}, DON'T FORGET TO BUY YOUR REROLLS!`)
                     }
-                else if(raid_wednesday || raid_sunday)
+                else if(raid_wednesday)
                     {
                         channel.send(`${val1} ${val}, Raid starts in about 15 minutes!`)
                     }
@@ -98,6 +117,13 @@ module.exports = {
                     if(raidStatuses.monday)
                     {
                         channel.send(`${val1} ${val}, Monday raid starts in about 15 minutes! 🍆💦`)
+                    }
+                }
+                else if(raid_sunday)
+                {
+                    if(raidStatuses.sunday)
+                    {
+                        channel.send(`${val1} ${val}, Sunday raid starts in about 15 minutes!`)
                     }
                 }
             }
@@ -122,15 +148,29 @@ module.exports = {
                     bot.user.setActivity('WoW Classic (R+) -cmds', { type: 'PLAYING' });
                     message.channel.send("Raiding schedule is ON");
                 }
+                //Monday ON
                 if (message.content === "-raid_monday on")
                 {
                     raid_monday_on();
                     message.channel.send("Monday raid is ON");
                 }
+                //Sunday ON
+                if (message.content === "-raid_sunday on")
+                {
+                    raid_sunday_on();
+                    message.channel.send("Sunday raid is ON");
+                }
+                //Monday OFF
                 if (message.content === "-raid_monday off")
                 {
                     raid_monday_off();
                     message.channel.send("Monday raid is OFF");
+                }
+                //Sunday OFF
+                if (message.content === "-raid_sunday off")
+                {
+                    raid_sunday_off();
+                    message.channel.send("Sunday raid is OFF");
                 }
                 if (message.content === "-raid_info") //raid status command to display current settings
                 {
@@ -138,7 +178,8 @@ module.exports = {
                         if(err) return console.error(err);
                         if(raidStatuses.raid_status){rs = "ON";} else{rs = "OFF";}
                         if(raidStatuses.monday){mr = "ON";} else{mr = "OFF";}
-                        message.channel.send("Raiding Schedule: " + rs + "\n" + "Monday Raid: " + mr); // condensed to one line
+                        if(raidStatuses.sunday){sr = "ON";} else{sr = "OFF";}
+                        message.channel.send("__**Raid Info**__\n **\nRaiding Schedule:** " + rs + "\n" + "**Monday Raid:** " + mr + "\n**Sunday Raid:** " + sr); // condensed to one line
                         //message.channel.send("Monday Raid: " + mr);
                     });
                 }
