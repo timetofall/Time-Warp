@@ -22,7 +22,7 @@ bot.on('ready', function() {
 bot.on('message', (message) => {
     const cmds = require('./commands/basic');
     cmds.raid.raid_toggle(bot, message);
-    cmds.replies.process(bot, message);
+    //cmds.replies.process(bot, message);
     cmds.react.raidAttendance(bot, message);
     cmds.react.raidAttendanceDisplay(bot, message);
     cmds.commands.commands(bot, message);
