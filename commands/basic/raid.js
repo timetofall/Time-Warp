@@ -105,25 +105,25 @@ module.exports = {
             if(raidStatuses.raid_status){
                 if(raid_tuesday)
                     {
-                        channel.send(`${val1} ${val}, Raid starts in about 15 minutes!`)
-                        channel.send(`${val1} ${val}, DON'T FORGET TO BUY YOUR REROLLS!`)
+                        channel.send(`${val1} ${val} Raid starts in about 15 minutes!`)
+                        channel.send(`${val1} ${val} DON'T FORGET TO BUY YOUR REROLLS!`)
                     }
                 else if(raid_wednesday)
                     {
-                        channel.send(`${val1} ${val}, Raid starts in about 15 minutes!`)
+                        channel.send(`${val1} ${val} Raid starts in about 15 minutes!`)
                     }
                 else if(raid_monday)
                 {
                     if(raidStatuses.monday)
                     {
-                        channel.send(`${val1} ${val}, Monday raid starts in about 15 minutes! 🍆💦`)
+                        channel.send(`${val1} ${val} Monday raid starts in about 15 minutes! 🍆💦`)
                     }
                 }
                 else if(raid_sunday)
                 {
                     if(raidStatuses.sunday)
                     {
-                        channel.send(`${val1} ${val}, Sunday raid starts in about 15 minutes!`)
+                        channel.send(`${val1} ${val} Sunday raid starts in about 15 minutes!`)
                     }
                 }
             }
